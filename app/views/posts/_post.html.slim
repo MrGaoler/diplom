@@ -1,9 +1,10 @@
 .panel.panel-info
-  .panel-heading.row
-    .col-xs-2.text-right = post.created_at.strftime('%B %d, %Y')
+  .panel-heading
+    .text-right = post.created_at.strftime('%B %d, %Y')
   .panel-body
-    = post.title
+    .text-center.h3 = post.title
     = post.body
+    br
     .btn-group
       = link_to 'Show', @post, class: 'btn btn-info'
       = link_to 'Edit', edit_post_path(post), class: 'btn btn-warning'
