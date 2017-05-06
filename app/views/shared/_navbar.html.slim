@@ -6,7 +6,7 @@ nav.navbar.navbar-inverse.navbar-fixed-top role="navigation"
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      = link_to "Home", root_url, class: "navbar-brand"
+      = link_to 'Home', root_url, class: 'navbar-brand'
     #navbar.collapse.navbar-collapse
       ul.nav.navbar-nav
         - if current_user
@@ -17,7 +17,7 @@ nav.navbar.navbar-inverse.navbar-fixed-top role="navigation"
           li.text-muted
             = link_to current_user.email, '#profile'
           li
-            = link_to 'Log out', destroy_user_session_path
+            = link_to 'Log out', destroy_user_session_path, method: :delete
         -else
           li
             = link_to 'Sign up', new_user_registration_path
