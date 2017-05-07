@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :services
+  resources :cards
   root 'home#show'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   scope '/' do

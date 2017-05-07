@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Card type:
+  = @card.card_type
+p
+  strong Name:
+  = @card.name
+p
+  strong Description:
+  = @card.description
+p
+  strong Schedule:
+  = @card.schedule
+
+= link_to 'Edit', edit_card_path(@card)
+'  |
+= link_to 'Back', cards_path
