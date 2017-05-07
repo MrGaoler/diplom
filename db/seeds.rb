@@ -6,7 +6,7 @@ Post.destroy_all
     lname: "last#{i}",
     username: "username#{i}",
     email: "test#{i}@example.com",
-    password: 'password',
+    password: 'password'
   )
   user.posts.create(
     title: "Hello from #{user.id}",

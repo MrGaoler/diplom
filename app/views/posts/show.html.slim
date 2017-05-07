@@ -1,5 +1,3 @@
-p#notice = notice
-
 p
   strong Title:
   = @post.title
@@ -7,6 +5,8 @@ p
   strong Body:
   = @post.body
 
+- for image in @post.images
+  = image_tag image.file_url, class: 'thumb'
+br
 = link_to 'Edit', edit_post_path(@post)
-'  |
 = link_to 'Back', posts_path

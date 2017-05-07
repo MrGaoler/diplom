@@ -1,8 +1,17 @@
+# == Schema Information
+#
+# Table name: posts
+#
+#  id         :integer          not null, primary key
+#  title      :string
+#  body       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  user_id    :integer
+#
+
 class Post < ApplicationRecord
   belongs_to :user
-
-  validates_uniqueness_of :email, :username
-  validates_presence_of :email, :fname, :lname, :password, :username
-  validates_length_of :password, in: 8..20
-  validates_confirmation_of :password
+  has_many :images, as: :imageable
+  accepts_nested_attributes_for :images
 end

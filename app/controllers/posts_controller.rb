@@ -10,6 +10,8 @@ class PostsController < ApplicationController
 
   def new
     @post = current_user.posts.new
+    @post.images.build
+
   end
 
   def edit; end
@@ -50,6 +52,10 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(
+      :title,
+      :body,
+      images_attributes: :file
+    )
   end
 end
