@@ -20,7 +20,11 @@ gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
+  gem 'awesome_print'
   gem 'byebug', platform: :mri
+  gem 'factory_girl'
+  gem 'faker'
+  gem 'rspec-rails', '~> 3.5'
 end
 
 group :development do
