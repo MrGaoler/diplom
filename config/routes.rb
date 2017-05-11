@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  resources :services
-  resources :cards
   root 'home#show'
+
+  devise_for :users, controllers: { registrations: 'users/registrations' }
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   scope '/' do
+    resources :services
+    resources :cards
+
     resource :home, only: :show
     resource :about, only: :show
     resource :team, only: :show
@@ -14,6 +17,4 @@ Rails.application.routes.draw do
   scope '/forum' do
     resources :posts
   end
-
-  devise_for :users, controllers: { registrations: 'users/registrations' }
 end
