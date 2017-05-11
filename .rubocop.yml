@@ -1,9 +1,13 @@
 AllCops:
   Exclude:
     - 'vendor/**/*'
-    - 'spec/fixtures/**/*'
     - 'tmp/**/*'
-    - 'db/schema.rb'
+    - 'db/**/*'
+    - 'vendor/**/*'
+    - 'bin/**/*'
+    - '**/script/**/*'
+    - 'config/initializers/*'
+
 Metrics/ModuleLength:
   Exclude:
     - "**/*_spec.rb"
@@ -16,6 +20,9 @@ Documentation:
   Enabled: false
 
 Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
   Enabled: false
 
 Style/FileName:
@@ -35,3 +42,4 @@ Metrics/MethodLength:
 
 Metrics/LineLength:
   Max: 100
+
