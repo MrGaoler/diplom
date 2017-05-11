@@ -9,8 +9,16 @@ nav.navbar.navbar-inverse.navbar-fixed-top role="navigation"
       = link_to 'Home', root_url, class: 'navbar-brand'
     #navbar.collapse.navbar-collapse
       ul.nav.navbar-nav
-        - if current_user
-          li = link_to 'Posts', posts_url
+        li = link_to 'Posts', posts_url
+        li = link_to 'Admin', rails_admin_path
+        li.dropdown
+          a.dropdown-toggle data-toggle="dropdown" type="button"
+            | Info
+            span.caret
+          ul.dropdown-menu
+            li = link_to 'About us', '#about'
+            li = link_to 'Contacts', '#contacts'
+            li = link_to 'Team', '#team'
       ul.nav.navbar-nav.navbar-right
         - if current_user
           li.text-muted = link_to current_user.email, '#profile'

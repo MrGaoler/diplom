@@ -11,7 +11,6 @@ class PostsController < ApplicationController
   def new
     @post = current_user.posts.new
     @post.images.build
-
   end
 
   def edit; end

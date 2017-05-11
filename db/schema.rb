@@ -15,6 +15,12 @@ ActiveRecord::Schema.define(version: 20170507161550) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "about_pages", force: :cascade do |t|
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "cards", force: :cascade do |t|
     t.integer  "card_type"
     t.string   "name"
@@ -22,6 +28,15 @@ ActiveRecord::Schema.define(version: 20170507161550) do
     t.string   "schedule"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "contacts_pages", force: :cascade do |t|
+    t.integer  "phone"
+    t.string   "email"
+    t.string   "location"
+    t.string   "work_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "images", force: :cascade do |t|
@@ -45,6 +60,12 @@ ActiveRecord::Schema.define(version: 20170507161550) do
     t.string   "name"
     t.string   "level"
     t.integer  "duration"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "team_pages", force: :cascade do |t|
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
