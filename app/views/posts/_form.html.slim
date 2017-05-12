@@ -1,11 +1,10 @@
-= form_for @post do |f|
+= form_for @post, html: { class: 'form-horizontal', id: 'post_form', role: 'form', remote: is_remote ||= false } do |f|
   - if @post.errors.any?
     #error_explanation
       h4 = "#{pluralize(@post.errors.count, 'error')} prohibited this post from being saved:"
       ul
         - @post.errors.full_messages.each do |message|
           li = message
-
   .field
     = f.label :title
     = f.text_field :title

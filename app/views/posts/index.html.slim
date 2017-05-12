@@ -1,4 +1,6 @@
-.panel-group = render @posts
-= link_to 'New Post', new_post_path
+= link_to new_post_path, class: 'btn btn-primary', id: 'new_post_link', remote: true do
+    span.glyphicon.glyphicon-plus
+    |  New Post
+.panel-group#posts = render @posts
 
 
