@@ -22,11 +22,14 @@
 #
 
 class User < ApplicationRecord
+  ROLES = %i[banned user moderator admin].freeze
+
   has_many :posts
   has_one :image, as: :imageable
-
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  enum role: ROLES
 
   validates_uniqueness_of :email, :username
   validates_presence_of :email, :fname, :lname, :password, :username
