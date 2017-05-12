@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
 
   def index
-    @posts = Post.page(params[:page] || 1).per(10)
+    @posts = Post.order('id DESC').page(params[:page] || 1).per(10)
   end
 
   def show; end
@@ -21,6 +21,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.js
       else
         format.html { render :new }
       end
@@ -41,6 +42,7 @@ class PostsController < ApplicationController
     @post.destroy
     respond_to do |format|
       format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+      format.js
     end
   end
 
