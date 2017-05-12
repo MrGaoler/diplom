@@ -10,7 +10,8 @@ nav.navbar.navbar-inverse.navbar-fixed-top role="navigation"
     #navbar.collapse.navbar-collapse
       ul.nav.navbar-nav
         li = link_to 'Posts', posts_url
-        li = link_to 'Admin', rails_admin_path
+        - if can? :manage, :all
+          li = link_to 'Admin', rails_admin_path
         li.dropdown
           a.dropdown-toggle data-toggle="dropdown" type="button"
             | Info
