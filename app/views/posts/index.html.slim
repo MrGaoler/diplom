@@ -1,7 +1,8 @@
 - if user_signed_in?
-  = link_to new_post_path, class: 'btn btn-primary', id: 'new_post_link', 'data-toggle' => 'modal', 'data-target' => '.mymodalfade', remote: true do
-    span.glyphicon.glyphicon-plus
-    |  New Post
+  = link_to 'New Post', new_post_path
 .panel-group#posts = render @posts
+= paginate @posts
 
 div class="modal fade mymodalfade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel"
+
+
