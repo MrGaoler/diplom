@@ -2,8 +2,10 @@
   = link_to new_post_path, class: 'btn btn-primary', id: 'new_post_link', 'data-toggle' => 'modal', 'data-target' => '.mymodalfade', remote: true do
     span.glyphicon.glyphicon-plus
     = t('new_post')
-.panel-group#posts = render @posts
-= paginate @posts
+.panel-group
+  #posts
+    = render @posts
+    = paginate @posts, remote: true
 
 div class="modal fade mymodalfade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel"
 
