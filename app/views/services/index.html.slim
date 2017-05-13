@@ -18,9 +18,9 @@ table
         td = service.level
         td = service.duration
         td = service.description
-        td = link_to 'Show', service
-        td = link_to 'Edit', edit_service_path(service)
-        td = link_to 'Destroy', service, data: { confirm: 'Are you sure?' }, method: :delete
+        td = link_to t('show'), service
+        td = link_to t('edit'), edit_service_path(service)
+        td = link_to t('destroy'), service, data: { confirm: t('are_you_sure') }, method: :delete
 
 br
 

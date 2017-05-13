@@ -18,9 +18,9 @@ table
         td = card.name
         td = card.description
         td = card.schedule
-        td = link_to 'Show', card
-        td = link_to 'Edit', edit_card_path(card)
-        td = link_to 'Destroy', card, data: { confirm: 'Are you sure?' }, method: :delete
+        td = link_to t('show'), card
+        td = link_to t('edit'), edit_card_path(card)
+        td = link_to t('destroy'), card, data: { confirm: t('are_you_sure') }, method: :delete
 
 br
 

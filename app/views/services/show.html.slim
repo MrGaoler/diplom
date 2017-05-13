@@ -1,7 +1,7 @@
 p#notice = notice
 
 p
-  strong Name:
+  strong t('name')
   = @service.name
 p
   strong Level:
@@ -13,6 +13,6 @@ p
   strong Description:
   = @service.description
 
-= link_to 'Edit', edit_service_path(@service)
+= link_to t('edit'), edit_service_path(@service)
 '  |
-= link_to 'Back', services_path
+= link_to t('back'), services_path

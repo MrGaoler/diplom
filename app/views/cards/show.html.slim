@@ -2,7 +2,7 @@ p
   strong Card type:
   = @card.card_type
 p
-  strong Name:
+  strong t('name')
   = @card.name
 p
   strong Description:
@@ -11,6 +11,6 @@ p
   strong Schedule:
   = @card.schedule
 
-= link_to 'Edit', edit_card_path(@card)
+= link_to t('edit'), edit_card_path(@card)
 '  |
-= link_to 'Back', cards_path
+= link_to t('back'), cards_path

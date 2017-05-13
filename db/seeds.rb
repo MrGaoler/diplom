@@ -3,8 +3,8 @@ Post.destroy_all
 10.times do |i|
   user = User.create(
     fname: "first#{i}",
-    lname: "last#{i}",
-    username: "username#{i}",
+    lt('name') "last#{i}",
+    usert('name') "username#{i}",
     email: "test#{i}@example.com",
     password: 'password'
   )
@@ -18,9 +18,9 @@ end
 # create user with different roles
 User::ROLES.each do |role_name|
   User.create(
-    fname: role_name,
-    lname: role_name,
-    username: role_name,
+    ft('name') role_name,
+    lt('name') role_name,
+    usert('name') role_name,
     email: "#{role_name}@example.com",
     password: 'password',
     role: role_name

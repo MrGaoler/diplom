@@ -5,7 +5,7 @@
         span[aria-hidden="true"]
           | ×
       h4#gridSystemModalLabel.modal-title
-        | Creating a new post
+        | Зміни нового поста
     .modal-body
       = form_for @post, html: { class: 'form-horizontal', id: 'post_form', role: 'form', remote: is_remote ||= false } do |f|
         .field

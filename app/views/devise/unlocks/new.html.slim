@@ -6,5 +6,5 @@ h2
     = f.label :email
     = f.email_field :email, autofocus: true, class: 'form-control'
   .actions
-    = f.submit 'Resend unlock instructions', class: 'btn btn-info'
+    = f.submit t('resend_unlock_instructions') class: 'btn btn-info'
 = render 'devise/shared/links'

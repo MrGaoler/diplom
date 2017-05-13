@@ -6,31 +6,31 @@ nav.navbar.navbar-inverse.navbar-fixed-top role="navigation"
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      = link_to 'Home', root_url, class: 'navbar-brand'
+      = link_to t('home'), root_url, class: 'navbar-brand'
     #navbar.collapse.navbar-collapse
       ul.nav.navbar-nav
-        li = link_to 'Posts', posts_url
+        li = link_to t('posts'), posts_url
         - if can? :manage, :all
           li = link_to 'Admin', rails_admin_path
         li.dropdown
           a.dropdown-toggle data-toggle="dropdown" type="button"
-            | Info
+            | Інформація
             span.caret
           ul.dropdown-menu
-            li = link_to 'About us', about_url
-            li = link_to 'Contacts', contact_url
-            li = link_to 'Team', team_url
+            li = link_to t('about'), about_url
+            li = link_to t('contacts'), contact_url
+            li = link_to t('team'), team_url
       ul.nav.navbar-nav.navbar-right
         - if current_user
           li.text-muted = link_to current_user.email, '#profile'
-          li = link_to 'Log out', destroy_user_session_path, method: :delete
+          li = link_to t('logout'), destroy_user_session_path, method: :delete
         - else
           ul.dropdown
-          li = link_to 'Sign up', new_user_registration_path
+          li = link_to t('signup'), new_user_registration_path
           li = link_to 'or', '#'
           li
             a.dropdown-toggle data-toggle="dropdown" href="#"
-              b Login
+              b Увійти
               span.caret
             ul#login-dp.dropdown-menu
               = render 'shared/log_in_form'

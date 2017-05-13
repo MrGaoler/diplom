@@ -3,7 +3,7 @@ h2 Change your password
   = devise_error_messages!
   = f.hidden_field :reset_password_token
   .field
-    = f.label :password, 'New password'
+    = f.label :password, t('new_password')
     - if @minimum_password_length
       em
         | (
@@ -11,8 +11,8 @@ h2 Change your password
         |  characters minimum)
     = f.password_field :password, autofocus: true, autocomplete: 'off', class: 'form-control'
   .field
-    = f.label :password_confirmation, 'Confirm new password'
+    = f.label :password_confirmation, t('confirm_new_password')
     = f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control'
   .actions
-    = f.submit 'Change my password', class: 'btn btn-info'
+    = f.submit t('change_my_password') class: 'btn btn-info'
 = render 'devise/shared/links'

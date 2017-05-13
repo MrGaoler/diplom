@@ -7,7 +7,7 @@
     - for image in post.images
       .col-12 = image_tag image.file, class: 'thumb'
     .btn-group
-      = link_to 'Show', post, class: 'btn btn-info'
+      = link_to t('show'), post, class: 'btn btn-info'
       - if can? :edit, post
-        = link_to 'Edit', edit_post_path(post), class: 'btn btn-warning'
-        = link_to 'Destroy', post, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure?'}
+        = link_to t('edit'), edit_post_path(post), class: 'btn btn-warning'
+        = link_to t('destroy'), post, method: :delete, class: 'btn btn-danger', data: {confirm: t('are_you_sure')}
