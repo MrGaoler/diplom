@@ -32,7 +32,7 @@ uk:
   description: 'Опис'
   listing_services: 'Список послуг'
   editing_service: 'Редагування послуг'
-  body: 'Текст повідомлення'
+  body: 'Текст'
   title: 'Заголовок'
   new_post: 'Новий пост'
   editing_post: 'Редагування поста'
@@ -45,7 +45,7 @@ uk:
   password: 'Пароль'
   password_confirmation: 'Підтвердження паролю'
   remember_me: "Запам'ятати мене"
-  update: 'Обновити'
+  update: 'Обновити пост'
   or: 'або'
   characters_minimum: 'мінімальна кількість символів'
   current_password: 'Поточний пароль'
@@ -53,3 +53,4 @@ uk:
   listing_cards: 'Перелік карт'
   card_type: 'Тип карти'
   schedule: 'Графік'
+  image: 'Світлина'
