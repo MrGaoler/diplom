@@ -1,2 +1,1 @@
-$('#posts').html('<%= j render(@posts) %>');
-$('#paginator').html('<%= j paginate(@posts, is_remote: true).to_s %>');
+$('#posts').html('<%= j render @posts %><%= j paginate @posts, remote: true %>');
