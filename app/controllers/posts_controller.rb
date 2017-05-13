@@ -13,7 +13,9 @@ class PostsController < ApplicationController
     @post.images.build
   end
 
-  def edit; end
+  def edit
+    @post.images.build unless @post.images.present?
+  end
 
   def create
     @post = current_user.posts.new(post_params)
