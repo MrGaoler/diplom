@@ -7,15 +7,15 @@
           li = message
 
   .field
-    = f.label :card_type
+    = f.label :card_type, t('card_type')
     = f.number_field :card_type
   .field
-    = f.label :name
+    = f.label :name, t('name')
     = f.text_field :name
   .field
-    = f.label :description
+    = f.label :description, t('description')
     = f.text_area :description
   .field
-    = f.label :schedule
+    = f.label :schedule, t('schedule')
     = f.text_field :schedule
   .actions = f.submit

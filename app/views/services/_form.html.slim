@@ -7,15 +7,15 @@
           li = message
 
   .field
-    = f.label :name
+    = f.label :name, t('name')
     = f.text_field :name
   .field
-    = f.label :level
+    = f.label :level, t('level')
     = f.text_field :level
   .field
-    = f.label :duration
+    = f.label :duration, t('duration')
     = f.number_field :duration
   .field
-    = f.label :description
+    = f.label :description, t('description')
     = f.text_area :description
   .actions = f.submit

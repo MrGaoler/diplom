@@ -5,14 +5,14 @@
         span[aria-hidden="true"]
           | ×
       h4#gridSystemModalLabel.modal-title
-        | Зміни нового поста
+        = t('creating_a_new_post')
     .modal-body
       = form_for @post, html: { class: 'form-horizontal', id: 'post_form', role: 'form', remote: is_remote ||= false } do |f|
         .field
-          = f.label :title
+          = f.label :title, t('title')
           = f.text_field :title, required: ''
         .field
-          = f.label :body
+          = f.label :body, t('body')
           = f.text_field :body, required: ''
         .field
           = f.fields_for :images do |image|

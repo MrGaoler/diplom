@@ -1,12 +1,12 @@
-h1 Listing services
+h1 = t('listing_services')
 
 table
   thead
     tr
-      th Name
-      th Level
-      th Duration
-      th Description
+      th = t('name')
+      th = t('level')
+      th = t('duration')
+      th = t('description')
       th
       th
       th
@@ -24,4 +24,4 @@ table
 
 br
 
-= link_to 'New Service', new_service_path
+= link_to t('new_service'), new_service_path
