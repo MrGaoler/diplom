@@ -13,9 +13,9 @@ module Diplom
     # -- all .rb files in that directory are automatically loaded.
 
     # Whitelist locales available for the application
-    I18n.available_locales = %i[en ua]
+    I18n.available_locales = %i[en uk]
 
     # Set default locale to something other than :en
-    I18n.default_locale = :ua
+    I18n.default_locale = :uk
   end
 end
