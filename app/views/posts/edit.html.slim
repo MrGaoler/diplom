@@ -1,7 +1,8 @@
-h1 = t('editing_post')
+.page-header
+  = link_to posts_path, class: 'btn btn-default' do
+    span.glyphicon.glyphicon-list-alt = t('back')
+  = link_to @post, class: 'btn btn-primary' do
+    span.glyphicon.glyphicon-info-sign = t('show')
+  h1 = t('editing_post')
 
 == render 'form'
-
-= link_to t('show'), @post
-= link_to t('back'), posts_path
-

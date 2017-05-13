@@ -1,24 +1,21 @@
-# README
+# Installing
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Set up database.yml then go for
+```
+bundle install
+rake db:create db:migrate db:seed
+rails s
+```
+# Overview
 
-Things you may want to cover:
+This is sport club site, here you can buy a subscription, also you can check your time left.
+We have a forum, where you can place your review of our modest establishment.
+You can check our contacts on the /about page.
+We have many famous trainers, you can check it on /team.
 
-* Ruby version
+# Огляд
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Це сайт спорт клубу, тут ви можете купити абонемент, також ви можете відслідковувати статус вашого абонементу.
+Також у нас є форум, там ви можете залишити рецензію на наш скромний заклад.
+Ви можете подивитись наші контакти на /about сторінці.
+У нас є багато відомих тренерів, ви можете подивитись нашу команду на сторінці /team.

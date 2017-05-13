@@ -7,14 +7,20 @@
       h4#gridSystemModalLabel.modal-title
         = t('creating_a_new_post')
     .modal-body
-      = form_for @post, html: { class: 'form-horizontal', id: 'post_form', role: 'form', remote: is_remote ||= false } do |f|
-        .field
-          = f.label :title, t('title')
-          = f.text_field :title, required: ''
-        .field
-          = f.label :body, t('body')
-          = f.text_field :body, required: ''
-        .field
-          = f.fields_for :images do |image|
-            = image.file_field :file
-        .actions = f.submit
+      = form_for(@post, html: { class: 'form-horizontal', id: 'post_form', role: 'form', remote: is_remote ||= false }) do |f|
+        .form-group
+          = f.label :title, t('title'), class: 'col-sm-2 control-label'
+          .col-sm-10
+            = f.text_field :title, class: 'form-control', required: ''
+        .form-group
+          = f.label :body, t('body'), class: 'col-sm-2 control-label'
+          .col-sm-10
+            = f.text_field :body, class: 'form-control', required: ''
+        .form-group
+          = f.label :image, class: 'col-sm-2 control-label'
+          .col-sm-10
+            = f.fields_for :images do |image|
+              = image.file_field :file
+        .form-group
+          .col-sm-offset-2.col-sm-10
+            = f.submit class: 'btn btn-success'
