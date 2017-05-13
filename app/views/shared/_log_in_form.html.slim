@@ -2,6 +2,6 @@
   = f.email_field :email, class: 'form-control', required: '', placeholder: 'email'
   = f.password_field :password, class: 'form-control', required: '', placeholder: 'password'
   = f.check_box :remember_me
-  = f.label :remember_me
-  = f.submit 'Sign in', class: 'btn btn-info text-center'
-  br = link_to 'Forgot your password?', new_password_path(:user)
+  = f.label :remember_me, t('remember_me')
+  = f.submit t('signin'), class: 'btn btn-info text-center'
+  br = link_to t('forgot'), new_password_path(:user)

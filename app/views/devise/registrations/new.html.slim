@@ -1,29 +1,26 @@
 h2
-  | Sign up
+  = t('signup')
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = devise_error_messages!
   .field
-    = f.label :username
+    = f.label :username, t('username')
     = f.text_field :username, required: true, class: 'form-control'
   .field
-    = f.label :fname,'first name'
+    = f.label :fname, t('first_name')
     = f.text_field :fname, required: true, class: 'form-control'
   .field
-    = f.label :lname,'last name'
+    = f.label :lname, t('last_name')
     = f.text_field :lname, required: true, class: 'form-control'
   .field
-    = f.label :email
+    = f.label :email, t('email')
     = f.email_field :email, autofocus: true, class: 'form-control'
   .field
-    = f.label :password
+    = f.label :password, t('password')
     - if @minimum_password_length
-      em
-        | (
-        = @minimum_password_length
-        |  characters minimum)
+      em = "(#{@minimum_password_length} #{t('characters_minimum')})"
     = f.password_field :password, autocomplete: 'off', class: 'form-control'
   .field
-    = f.label :password_confirmation
+    = f.label :password_confirmation, t('password_confirmation')
     = f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control'
   .actions
-    = f.submit 'Sign up', class: 'btn btn-info'
+    = f.submit t('signup'), class: 'btn btn-info'

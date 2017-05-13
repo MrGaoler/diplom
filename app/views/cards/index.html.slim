@@ -1,12 +1,12 @@
-h1 Listing cards
+h1 =('listing_cards')
 
 table
   thead
     tr
-      th Card type
-      th Name
-      th Description
-      th Schedule
+      th = t('card_type')
+      th = t('name')
+      th = t('description')
+      th = t('schedule')
       th
       th
       th
@@ -18,9 +18,9 @@ table
         td = card.name
         td = card.description
         td = card.schedule
-        td = link_to 'Show', card
-        td = link_to 'Edit', edit_card_path(card)
-        td = link_to 'Destroy', card, data: { confirm: 'Are you sure?' }, method: :delete
+        td = link_to t('show'), card
+        td = link_to t('edit'), edit_card_path(card)
+        td = link_to t('destroy'), card, data: { confirm: t('are_you_sure') }, method: :delete
 
 br
 
