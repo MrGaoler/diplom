@@ -14,8 +14,8 @@ class Post < ApplicationRecord
   paginates_per 10
 
   belongs_to :user
-  has_many :images, as: :imageable
-  accepts_nested_attributes_for :images
+  has_one :image, as: :imageable, dependent: :destroy
+  accepts_nested_attributes_for :image
 
   validates :title, :body, presence: true
 end

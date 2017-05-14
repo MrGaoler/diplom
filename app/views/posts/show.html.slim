@@ -5,8 +5,8 @@ p
   strong = t('body')
   = @post.body
 
-- for image in @post.images
-  = image_tag image.file_url, class: 'thumb'
-br
+- if @post.image
+  .col-12 = image_tag @post.image.file, class: 'thumb'
+
 = link_to t('edit'), edit_post_path(@post)
 = link_to t('back'), posts_path

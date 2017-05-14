@@ -4,8 +4,8 @@
   .panel-body
     .col-12.text-center.h3 = post.title
     .col-12 = post.body
-    - for image in post.images
-      .col-12 = image_tag image.file, class: 'thumb'
+    - if post.image
+      .col-12 = image_tag post.image.file, class: 'thumb'
     .btn-group
       = link_to t('show'), post, class: 'btn btn-info'
       - if can? :edit, post

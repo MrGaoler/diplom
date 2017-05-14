@@ -13,6 +13,7 @@ Post.destroy_all
     body: SecureRandom.hex,
     created_at: Time.now
   )
+  print '.'
 end
 
 # create user with different roles
@@ -25,4 +26,6 @@ User::ROLES.each do |role_name|
     password: 'password',
     role: role_name
   )
+  print '.'
 end
+ap'done', color: { string: :greenish }

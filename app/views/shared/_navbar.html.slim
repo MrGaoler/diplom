@@ -25,12 +25,20 @@ nav.navbar.navbar-inverse.navbar-fixed-top role="navigation"
           li.text-muted = link_to current_user.email, '#profile'
           li = link_to t('logout'), destroy_user_session_path, method: :delete
         - else
-          ul.dropdown
-          li = link_to t('signup'), new_user_registration_path
-          li = link_to t('or'), '#'
+          /li = link_to t('sign_up'), new_user_registration_path
+
           li
             a.dropdown-toggle data-toggle="dropdown" href="#"
-              b =t('login')
+              b = t('sign_up')
               span.caret
-            ul#login-dp.dropdown-menu
-              = render 'shared/log_in_form'
+            ul#sign-up.dropdown-menu
+              = render 'shared/auth_form', type: 'sign_up'
+
+          li = link_to t('or'), '#'
+
+          li
+            a.dropdown-toggle data-toggle="dropdown" href="#"
+              b = t('log_in')
+              span.caret
+            ul#login-in.dropdown-menu
+              = render 'shared/auth_form', type: 'log_in'

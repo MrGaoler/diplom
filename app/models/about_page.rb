@@ -9,5 +9,4 @@
 #
 
 class AboutPage < ApplicationRecord
-  has_many :image, as: :imageable
 end

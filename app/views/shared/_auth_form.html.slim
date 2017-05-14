@@ -1,0 +1,9 @@
+= form_for :user, url: type == 'log_in' ? session_path(:user) : registration_path(:user), html: {class: 'form-login form'} do |f|
+  = f.email_field :email, class: 'form-control', required: '', placeholder: 'email'
+  = f.password_field :password, class: 'form-control', required: '', placeholder: 'password'
+  - if type == 'log_in'
+    = f.check_box :remember_me
+    = f.label :remember_me, t('remember_me')
+  = f.submit t(type), class: 'btn btn-info text-center'
+  - if type == 'log_in'
+    br = link_to t('forgot'), new_password_path(:user)

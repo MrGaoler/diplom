@@ -9,5 +9,4 @@
 #
 
 class TeamPage < ApplicationRecord
-  has_many :image, as: :imageable
 end
