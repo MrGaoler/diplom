@@ -18,7 +18,7 @@
 #  username               :string
 #  fname                  :string
 #  lname                  :string
-#  role                   :integer
+#  role                   :integer          default("1")
 #
 
 class User < ApplicationRecord
@@ -26,13 +26,14 @@ class User < ApplicationRecord
 
   has_many :posts
   has_one :image, as: :imageable
+  accepts_nested_attributes_for :image
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
   enum role: ROLES
 
-  validates_uniqueness_of :email, :username
-  validates_presence_of :email, :fname, :lname, :password, :username
+  validates_presence_of :email, :password
   validates_length_of :password, in: 6..20
-  validates_confirmation_of :password
+  validates_uniqueness_of :email, :username, allow_blank: true
 end

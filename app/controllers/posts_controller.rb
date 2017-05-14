@@ -10,12 +10,10 @@ class PostsController < ApplicationController
 
   def new
     @post = current_user.posts.new
-    @post.images.build
+    @post.build_image
   end
 
-  def edit
-    @post.images.build unless @post.images.present?
-  end
+  def edit; end
 
   def create
     @post = current_user.posts.new(post_params)
@@ -58,7 +56,7 @@ class PostsController < ApplicationController
     params.require(:post).permit(
       :title,
       :body,
-      images_attributes: :file
+      image_attributes: :file
     )
   end
 end
