@@ -17,6 +17,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.new(post_params)
+    @post.build_image if @post.image.nil?
 
     respond_to do |format|
       if @post.save
@@ -56,7 +57,7 @@ class PostsController < ApplicationController
     params.require(:post).permit(
       :title,
       :body,
-      image_attributes: :file
+      image_attributes: %i[id file]
     )
   end
 end

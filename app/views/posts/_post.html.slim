@@ -1,22 +1,8 @@
-.container.list-article id="post_#{post.id}"
-  .text-right = post.created_at.strftime('%B %d, %Y')
-  #switch-view.btn-group.pull-right
-    button.btn.btn-primary
-      span.fa.fa-th-large
-    button.btn.btn-primary.active
-      span.fa.fa-th-list
-  .clearfix
-  .row
-    .col-xs-12.article-wrapper
-      article = post.title
-    .col-xs-12.article-wrapper
-      article = post.body
-  - if post.image
-    .col-xs-12.article-wrapper
-      article = image_tag post.image.file, class: 'thumb'
-    .btn-group
-      = link_to t('show'), post, class: 'btn btn-info'
-      - if can? :edit, post
-        = link_to t('edit'), edit_post_path(post), class: 'btn btn-warning'
-        = link_to t('destroy'), post, method: :delete, class: 'btn btn-danger', data: {confirm: t('are_you_sure')}
-
+.col-xs-12.article-wrapper
+  article
+    = link_to t('show'), post, class: 'more'
+    .img-wrapper
+      - if post.image
+        = image_tag post.image.file_url
+    h1 = post.title
+    p = post.body
