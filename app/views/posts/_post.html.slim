@@ -1,13 +1,8 @@
-.panel.panel-info id="post_#{post.id}"
-  .panel-heading
-    .text-right = post.created_at.strftime('%B %d, %Y')
-  .panel-body
-    .col-12.text-center.h3 = post.title
-    .col-12 = post.body
-    - if post.image
-      .col-12 = image_tag post.image.file, class: 'thumb'
-    .btn-group
-      = link_to t('show'), post, class: 'btn btn-info'
-      - if can? :edit, post
-        = link_to t('edit'), edit_post_path(post), class: 'btn btn-warning'
-        = link_to t('destroy'), post, method: :delete, class: 'btn btn-danger', data: {confirm: t('are_you_sure')}
+.col-xs-12.article-wrapper
+  article
+    = link_to t('show'), post, class: 'more'
+    .img-wrapper
+      - if post.image
+        = image_tag post.image.file_url
+    h1 = post.title
+    p = post.body

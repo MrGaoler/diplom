@@ -11,8 +11,9 @@ Post.destroy_all
   user.posts.create(
     title: "Hello from #{user.id}",
     body: SecureRandom.hex,
-    created_at: Time.now
-  )
+    created_at: Time.now,
+  ).build_image.save
+
   print '.'
 end
 

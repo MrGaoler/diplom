@@ -1,3 +1,14 @@
+.page-header
+  = link_to posts_path, class: 'btn btn-default' do
+    span.glyphicon.glyphicon-list-alt = t('back')
+  = link_to @post, class: 'btn btn-primary' do
+    span.glyphicon.glyphicon-info-sign = t('show')
+  - if can? :edit, @post
+    = link_to edit_post_path(@post), class: 'btn btn-info' do
+      span.glyphicon.glyphicon-edit = t('edit')
+    = link_to @post, method: :delete, class: 'btn btn-danger', data: {confirm: t('are_you_sure')} do
+      span.glyphicon.glyphicon-trash = t('destroy')
+
 p
   strong = t('title')
   = @post.title
@@ -6,7 +17,7 @@ p
   = @post.body
 
 - if @post.image
-  .col-12 = image_tag @post.image.file, class: 'thumb'
+  .col-12 = image_tag @post.image.file_url, class: 'thumb'
 
-= link_to t('edit'), edit_post_path(@post)
+
 = link_to t('back'), posts_path
