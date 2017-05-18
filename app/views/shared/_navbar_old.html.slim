@@ -1,0 +1,43 @@
+/ TODO: fully remove this file after migration to new theme
+
+nav.navbar.navbar-inverse.navbar-fixed-top role="navigation"
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      = link_to t('home'), root_url, class: 'navbar-brand'
+    #navbar.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li = link_to t('posts'), posts_url
+        - if can? :manage, :all
+          li = link_to 'Admin', rails_admin_path
+        li.dropdown
+          a.dropdown-toggle data-toggle="dropdown" type="button"
+            = t('info')
+            span.caret
+          ul.dropdown-menu
+            li = link_to t('about'), about_url
+            li = link_to t('contacts'), contact_url
+            li = link_to t('team'), team_url
+      ul.nav.navbar-nav.navbar-right
+        - if current_user
+          li.text-muted = link_to current_user.email, '#profile'
+          li = link_to t('logout'), destroy_user_session_path, method: :delete
+        - else
+          /li = link_to t('sign_up'), new_user_registration_path
+          li
+            a.dropdown-toggle data-toggle="dropdown" href="#"
+              b = t('sign_up')
+              span.caret
+            ul#sign-up.dropdown-menu
+              = render 'shared/auth_form', type: 'sign_up'
+          li = link_to t('or'), '#'
+          li
+            a.dropdown-toggle data-toggle="dropdown" href="#"
+              b = t('log_in')
+              span.caret
+            ul#login-in.dropdown-menu
+              = render 'shared/auth_form', type: 'log_in'

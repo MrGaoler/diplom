@@ -6,6 +6,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "animate";
+@import "lightbox";
+@import "responsive";
+@import "responsive";
+@import "main";
+
 
 // body{
 //   margin-top: 60px;
@@ -15,9 +20,11 @@
   width: 150px;
   height: auto;
 }
+
 .form-login{
   padding: 10px;
 }
+
 nav.pagination {
   text-align: center;
   margin-top: 50px;
