@@ -1,44 +1,98 @@
-nav.navbar.navbar-inverse.navbar-fixed-top role="navigation"
+header#header
   .container
-    .navbar-header
-      button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      = link_to t('home'), root_url, class: 'navbar-brand'
-    #navbar.collapse.navbar-collapse
-      ul.nav.navbar-nav
-        li = link_to t('posts'), posts_url
-        - if can? :manage, :all
-          li = link_to 'Admin', rails_admin_path
-        li.dropdown
-          a.dropdown-toggle data-toggle="dropdown" type="button"
-            = t('info')
-            span.caret
-          ul.dropdown-menu
-            li = link_to t('about'), about_url
-            li = link_to t('contacts'), contact_url
-            li = link_to t('team'), team_url
-      ul.nav.navbar-nav.navbar-right
-        - if current_user
-          li.text-muted = link_to current_user.email, '#profile'
-          li = link_to t('logout'), destroy_user_session_path, method: :delete
-        - else
-          /li = link_to t('sign_up'), new_user_registration_path
-
+    .row
+      .col-sm-12.overflow
+        .social-icons.pull-right
+          ul.nav.nav-pills
+            li
+              a href=""
+                i.fa.fa-facebook
+            li
+              a href=""
+                i.fa.fa-twitter
+            li
+              a href=""
+                i.fa.fa-google-plus
+            li
+              a href=""
+                i.fa.fa-dribbble
+            li
+              a href=""
+                i.fa.fa-linkedin
+  .navbar.navbar-inverse role="banner"
+    .container
+      .navbar-header
+        button.navbar-toggle data-target=".navbar-collapse" data-toggle="collapse" type="button"
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        = link_to root_url, class: 'navbar-brand' do
+          = image_tag 'template/logo.png'
+          / TODO: replace with our logo
+      .collapse.navbar-collapse
+        ul.nav.navbar-nav.navbar-right
+          li.active = link_to 'Home', root_url
+          li = link_to 'Posts', posts_url
+          li.dropdown
+            a href="#"
+              | Pages
+              i.fa.fa-angle-down
+            ul.sub-menu role="menu"
+              li
+                a href="#"  About
+              li
+                a href="#"  About 2
+              li
+                a href="#"  Services
+              li
+                a href="#"  Pricing
+              li
+                a href="#"  Contact us
+              li
+                a href="#"  Contact us 2
+              li
+                a href="#"  404 error
+              li
+                a href="#"  Coming Soon
+          li.dropdown
+            a href="#"
+              | Blog
+              i.fa.fa-angle-down
+            ul.sub-menu role="menu"
+              li
+                a href="#"  Blog Default
+              li
+                a href="#"  Timeline Blog
+              li
+                a href="#"  2 Columns + Right Sidebar
+              li
+                a href="#"  1 Column + Left Sidebar
+              li
+                a href="#"  Blog Masonary
+              li
+                a href="#"  Blog Details
+          li.dropdown
+            a href="#"
+              | Portfolio
+              i.fa.fa-angle-down
+            ul.sub-menu role="menu"
+              li
+                a href="#"  Portfolio Default
+              li
+                a href="#"  Isotope 3 Columns + Right Sidebar
+              li
+                a href="#"  3 Columns + Right Sidebar
+              li
+                a href="#"  3 Columns + Left Sidebar
+              li
+                a href="#"  2 Columns
+              li
+                a href="#"  Portfolio Details
           li
-            a.dropdown-toggle data-toggle="dropdown" href="#"
-              b = t('sign_up')
-              span.caret
-            ul#sign-up.dropdown-menu
-              = render 'shared/auth_form', type: 'sign_up'
-
-          li = link_to t('or'), '#'
-
-          li
-            a.dropdown-toggle data-toggle="dropdown" href="#"
-              b = t('log_in')
-              span.caret
-            ul#login-in.dropdown-menu
-              = render 'shared/auth_form', type: 'log_in'
+            a href="#"  Shortcodes
+      .search
+        form role="form"
+          i.fa.fa-search
+          .field-toggle
+            input.search-form autocomplete="off" placeholder="Search" type="text"
