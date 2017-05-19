@@ -1,8 +1,32 @@
-.col-xs-12.article-wrapper
-  article
-    = link_to t('show'), post, class: 'more'
-    .img-wrapper
-      - if post.image
-        = image_tag post.image.file_url
-    h1 = post.title
-    p = post.body
+.col-sm-12.col-md-12
+  .single-blog.single-column
+    .post-thumb
+      = link_to post
+        figure
+          = image_tag post.image.file_url, class: 'img-responsive post-image'
+      .post-overlay
+        span.uppercase
+          = link_to post
+            = post.created_at.day
+            br
+            small
+              = post.created_at.strftime('%b')
+    .post-content.overflow
+      h2.post-title.bold
+        = link_to post
+          = post.title
+      h3.post-author
+        a[href="#"]
+          | Posted by #{post.user.display_name}
+      p = post.body
+      / TODO: Likes and comments are stubbed
+      .post-bottom.overflow
+        ul.nav.navbar-nav.post-nav
+          li
+            a[href="#"]
+              i.fa.fa-heart
+              | 32 Love
+          li
+            a[href="#"]
+              i.fa.fa-comments
+              | 3 Comments
