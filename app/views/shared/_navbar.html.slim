@@ -33,7 +33,6 @@ header#header
       .collapse.navbar-collapse
         ul.nav.navbar-nav.navbar-right
           li.active = link_to 'Home', root_url
-          li = link_to 'Posts', posts_url
           li.dropdown
             a href="#"
               | Pages
@@ -66,7 +65,7 @@ header#header
                 = link_to 'New Post', new_post_url
           li.dropdown
             a href="#"
-              | Portfolio
+              | About
               i.fa.fa-angle-down
             ul.sub-menu role="menu"
               li
@@ -81,8 +80,13 @@ header#header
                 a href="#"  2 Columns
               li
                 a href="#"  Portfolio Details
-          li
-            a href="#"  Shortcodes
+          li.dropdown
+            a href="#"
+              | Log In
+              i.fa.fa-angle-down
+              ul.sub-menu role="menu"
+                li
+                  = render 'shared/auth_form'
       .search
         form role="form"
           i.fa.fa-search
