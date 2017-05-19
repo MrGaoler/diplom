@@ -36,4 +36,8 @@ class User < ApplicationRecord
   validates_presence_of :email, :password
   validates_length_of :password, in: 6..20
   validates_uniqueness_of :email, :username, allow_blank: true
+
+  def display_name
+    fname && lname ? "#{fname} #{lname}" : email
+  end
 end

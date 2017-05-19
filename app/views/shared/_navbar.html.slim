@@ -61,17 +61,9 @@ header#header
               i.fa.fa-angle-down
             ul.sub-menu role="menu"
               li
-                a href="#"  Blog Default
+                = link_to 'Blog', posts_url
               li
-                a href="#"  Timeline Blog
-              li
-                a href="#"  2 Columns + Right Sidebar
-              li
-                a href="#"  1 Column + Left Sidebar
-              li
-                a href="#"  Blog Masonary
-              li
-                a href="#"  Blog Details
+                = link_to 'New Post', new_post_url
           li.dropdown
             a href="#"
               | Portfolio

@@ -11,5 +11,6 @@ public/uploads
 # Ignore Byebug command history file.
 .byebug_history
 .idea/
+**/*.dump
 
 config/database.yml
