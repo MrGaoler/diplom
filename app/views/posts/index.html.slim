@@ -4,8 +4,7 @@ section#page-breadcrumb
       .row
         .action
           .col-sm-12
-            h1.title.text-center Блог
-            / TODO: add t for 'Блог'
+            h1.title.text-center = t('forum')
 section#blog.padding-top
   .container
     .row
@@ -95,7 +94,7 @@ section#blog.padding-top
                     | count
           .sidebar-item.popular
             / TODO: add translation for 'Останні фото'
-            h3 Останні фото
+            h3 = t('last_photos')
             ul.gallery
               - Image.last(6).each do |image|
                 li = link_to '#'

@@ -70,6 +70,8 @@ uk:
   schedule: 'Графік'
   image: 'Світлина'
   profile: 'Профіль'
+  forum: 'Форум'
+  last_photos: 'Останні фото'
   activerecord:
     errors:
       messages:
