@@ -7,10 +7,13 @@
     width: 850px;
     height: 400px;
   }
-
-  .popular-image {
+  .galary li{
     width: 66px;
     height: 66px;
+    overflow: hidden;
+    img{
+      display: block;
+    }
   }
 
   .comments-image {
