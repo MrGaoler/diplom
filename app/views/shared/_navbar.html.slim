@@ -78,8 +78,7 @@ header#header
                 a href="#"  3 Columns + Left Sidebar
               li
                 a href="#"  2 Columns
-              li
-                a href="#"  Portfolio Details
+              li = link_to t('contacts'), contact_url
           li.dropdown
             a href="#"
               = user_signed_in? ? current_user.display_name : t('log_in')
