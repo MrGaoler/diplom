@@ -69,6 +69,7 @@ uk:
   card_type: 'Тип карти'
   schedule: 'Графік'
   image: 'Світлина'
+  profile: 'Профіль'
   activerecord:
     errors:
       messages:

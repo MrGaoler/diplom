@@ -82,17 +82,12 @@ header#header
                 a href="#"  Portfolio Details
           li.dropdown
             a href="#"
-              = user_signed_in? ? current_user.display_name : 'Log In'
+              = user_signed_in? ? current_user.display_name : t('log_in')
               i.fa.fa-angle-down
             ul.sub-menu role="menu"
               li
                 - if user_signed_in?
-                  = link_to 'Профіль', edit_user_registration_path
+                  = link_to t('profile'), edit_user_registration_path
                   = link_to t('logout'), destroy_user_session_path, method: :delete
                 - else
                   = render 'shared/auth_form'
-      .search
-        form role="form"
-          i.fa.fa-search
-          .field-toggle
-            input.search-form autocomplete="off" placeholder="Search" type="text"
