@@ -1,13 +1,11 @@
-div class="modal fade mymodalfade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel"
-
 section#page-breadcrumb
   .vertical-center.sun
     .container
       .row
         .action
           .col-sm-12
-            h1.title.text-center
-              | My Blog
+            h1.title.text-center Блог
+            / TODO: add t for 'Блог'
 section#blog.padding-top
   .container
     .row
@@ -96,25 +94,9 @@ section#blog.padding-top
                   span.pull-right
                     | count
           .sidebar-item.popular
-            h3 Latest Photos
-            / TODO: Must show last photos
+            / TODO: add translation for 'Останні фото'
+            h3 Останні фото
             ul.gallery
-              li
-                = link_to '#'
-                  = image_tag 'template/p3.jpg', class: 'popular-image'
-              li
-                = link_to '#'
-                  = image_tag 'template/p3.jpg', class: 'popular-image'
-              li
-                = link_to '#'
-                  = image_tag 'template/p3.jpg', class: 'popular-image'
-              li
-                = link_to '#'
-                  = image_tag 'template/p3.jpg', class: 'popular-image'
-              li
-                = link_to '#'
-                  = image_tag 'template/p3.jpg', class: 'popular-image'
-              li
-                = link_to '#'
-                  = image_tag 'template/p3.jpg', class: 'popular-image'
-== render 'shared/footer'
+              - Image.last(6).each do |image|
+                li = link_to '#'
+                  = image_tag image.file_url, class: 'img-responsive'
