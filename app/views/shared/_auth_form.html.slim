@@ -1,7 +1,8 @@
-= form_for :user, url: session_path(:user), html: {class: 'form-login form'} do |f|
+= form_for :user, url: session_path(:user), html: {class: 'form-login form form-group'} do |f|
   = f.email_field :email, class: 'form-control', required: '', placeholder: 'email'
   = f.password_field :password, class: 'form-control', required: '', placeholder: 'password'
   = f.check_box :remember_me
   = f.label :remember_me, t('remember_me')
-  = f.submit t('log_in'), class: 'btn btn-info text-center'
+  = link_to t('log_in'), '#', onclick: "$('.form-login').submit()"
   = link_to t('forgot'), new_password_path(:user)
+  = link_to t('sign_up'), new_user_registration_path
