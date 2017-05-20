@@ -72,6 +72,9 @@ uk:
   profile: 'Профіль'
   forum: 'Форум'
   last_photos: 'Останні фото'
+  address: 'Адреса'
+  send_a_message: 'Відправити повідомлення'
+  submit: 'Підтвердити'
   activerecord:
     errors:
       messages:

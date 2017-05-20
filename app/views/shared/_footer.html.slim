@@ -2,7 +2,7 @@ footer#footer
   .container
     .row
       .col-sm-12.text-center.bottom-separator
-        img.img-responsive.inline[src="#" alt=""]
+        = image_tag 'template/under.png', class: 'comments-image'
       .col-md-4.col-sm-6
         .testimonial.bottom
           h2
@@ -10,7 +10,7 @@ footer#footer
           .media
             .pull-left
               a[href="#"]
-                img[src="#" alt=""]
+                = image_tag 'template/p3.jpg'
             .media-body
               blockquote
                 | Nisi commodo bresaola, leberkas venison eiusmod bacon occaecat labore tail.
@@ -20,7 +20,7 @@ footer#footer
           .media
             .pull-left
               a[href="#"]
-                img[src="#" alt=""]
+                = image_tag 'template/p3.jpg'
             .media-body
               blockquote
                 | Capicola nisi flank sed minim sunt aliqua rump pancetta leberkas venison eiusmod.
@@ -28,9 +28,10 @@ footer#footer
                 a[href=""]
                   | - Abraham Josef
       .col-md-3.col-sm-6
+        /TODO: Change Testimonial, replace addresses
         .contact-info.bottom
           h2
-            | Contacts
+            = t('contacts')
           address
             |  E-mail:
             a[href="#"]
@@ -41,7 +42,7 @@ footer#footer
             |  Fax: +1 (123) 456 7891
             br
           h2
-            | Address
+            = t('address')
           address
             |  Unit C2, St.Vincent's Trading Est.,
             br
@@ -54,16 +55,16 @@ footer#footer
       .col-md-4.col-sm-12
         .contact-form.bottom
           h2
-            | Send a message
+            = t('send_a_message')
           form#main-contact-form[name="contact-form" method="post"]
             .form-group
-              input.form-control[type="text" name="name" required="required" placeholder="Name"]
+              input.form-control[type="text" name="name" required="required" placeholder= t('first_name')]
             .form-group
-              input.form-control[type="email" name="email" required="required" placeholder="Email Id"]
+              input.form-control[type="email" name="email" required="required" placeholder= t('email')]
             .form-group
-              textarea#message.form-control[name="message" required="required" rows="8" placeholder="Your text here"]
+              textarea#message.form-control[name="message" required="required" rows="8" placeholder= t('body')]
             .form-group
-              input.btn.btn-submit[type="submit" name="submit" value="Submit"]
+              input.btn.btn-submit[type="submit" name="submit" value= t('submit')]
       .col-sm-12
         .copyright-text.text-center
           p

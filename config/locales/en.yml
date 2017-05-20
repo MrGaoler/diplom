@@ -56,3 +56,6 @@ en:
   profile: 'Profile'
   forum: 'Forum'
   last_photos: 'last_photos'
+  address: 'Address'
+  send_a_message: 'Send a message'
+  submit: 'Submit'
