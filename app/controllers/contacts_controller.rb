@@ -1,3 +1,5 @@
 class ContactsController < ApplicationController
-  def show; end
+  def show
+    @resource = Cms::ContactsPage.load
+  end
 end
