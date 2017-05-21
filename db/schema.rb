@@ -10,16 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170512192406) do
+ActiveRecord::Schema.define(version: 20170521185053) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "about_pages", force: :cascade do |t|
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
 
   create_table "cards", force: :cascade do |t|
     t.integer  "card_type"
@@ -30,11 +24,9 @@ ActiveRecord::Schema.define(version: 20170512192406) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "contacts_pages", force: :cascade do |t|
-    t.integer  "phone"
-    t.string   "email"
-    t.string   "location"
-    t.string   "work_time"
+  create_table "cms_static_pages", force: :cascade do |t|
+    t.string   "type"
+    t.json     "data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -46,6 +38,17 @@ ActiveRecord::Schema.define(version: 20170512192406) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.index ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id", using: :btree
+  end
+
+  create_table "members", force: :cascade do |t|
+    t.string   "position"
+    t.string   "full_name"
+    t.json     "social_links"
+    t.string   "memberable_type"
+    t.integer  "memberable_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["memberable_type", "memberable_id"], name: "index_members_on_memberable_type_and_memberable_id", using: :btree
   end
 
   create_table "posts", force: :cascade do |t|
@@ -60,12 +63,6 @@ ActiveRecord::Schema.define(version: 20170512192406) do
     t.string   "name"
     t.string   "level"
     t.integer  "duration"
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "team_pages", force: :cascade do |t|
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false

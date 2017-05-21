@@ -65,20 +65,11 @@ header#header
                 = link_to t('new_post'), new_post_url
           li.dropdown
             a href="#"
-              | About
+              = t('info')
               i.fa.fa-angle-down
             ul.sub-menu role="menu"
-              li
-                a href="#"  Portfolio Default
-              li
-                a href="#"  Isotope 3 Columns + Right Sidebar
-              li
-                a href="#"  3 Columns + Right Sidebar
-              li
-                a href="#"  3 Columns + Left Sidebar
-              li
-                a href="#"  2 Columns
               li = link_to t('contacts'), contact_url
+              li = link_to t('about'), about_url
           li.dropdown
             a href="#"
               = user_signed_in? ? current_user.display_name : t('log_in')
