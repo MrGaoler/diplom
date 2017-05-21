@@ -9,7 +9,5 @@
 #  updated_at :datetime         not null
 #
 
-class Cms::ContactsPage < Cms::StaticPage
-  has_one :image, as: :imageable, dependent: :destroy
-  accepts_nested_attributes_for :image
+class Cms::HomePage < Cms::StaticPage
 end
