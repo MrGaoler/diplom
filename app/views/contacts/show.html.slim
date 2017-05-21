@@ -4,33 +4,24 @@ section#page-breadcrumb
       .row
         .action
           .col-sm-12
-            h1.title
-              | Contact US
-            p
-              | Stay close
+            h1.title  Contact US
+            p  Stay close
 section#map-section
   .container
     #gmap
     .contact-info
-      h2
-        | Contacts
+      h2 Contacts
       address
         |  E-mail:
-        a[href="mailto:someone@example.com"]
-          | email@email.com
+        /TODO: add mailer
+        a[href="mailto:contacts_pages.email"]
+          = @resource.email
         br
-        |  Phone: +1 (123) 456 7890
+          = @resource.phone
         br
-        |  Fax: +1 (123) 456 7891
-        br
-      h2
-        | Address
+      h2 Address
       address
-        |  Unit C2, St.Vincent's Trading Est.,
-        br
-        |  Feeder Road,
-        br
-        |  Bristol, BS2 0UY
-        br
-        |  United Kingdom
-        br
+        = @resource.location
+      h2 Work Time
+      address
+        = @resource.work_time

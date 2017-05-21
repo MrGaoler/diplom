@@ -1,3 +1,6 @@
 class ContactsController < ApplicationController
-  def show; end
+  def show
+    @resource = Cms::ContactsPage.load
+    @resource.build_image unless @resource.image
+  end
 end
