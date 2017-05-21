@@ -12,4 +12,13 @@
 #
 
 class Service < ApplicationRecord
+  has_one :image, as: :imageable, dependent: :destroy
+  accepts_nested_attributes_for :image
+
+  has_many :members, as: :memberable
+  accepts_nested_attributes_for :members
+
+  def self.load
+    first || create
+  end
 end

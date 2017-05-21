@@ -70,6 +70,7 @@ uk:
   schedule: 'Графік'
   image: 'Світлина'
   profile: 'Профіль'
+  services: 'Послуги'
   activerecord:
     errors:
       messages:
