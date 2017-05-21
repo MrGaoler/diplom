@@ -70,6 +70,11 @@ uk:
   schedule: 'Графік'
   image: 'Світлина'
   profile: 'Профіль'
+  forum: 'Форум'
+  last_photos: 'Останні фото'
+  address: 'Адреса'
+  send_a_message: 'Відправити повідомлення'
+  submit: 'Підтвердити'
   services: 'Послуги'
   activerecord:
     errors:

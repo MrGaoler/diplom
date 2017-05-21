@@ -56,18 +56,19 @@ header#header
                 a href="#"  Coming Soon
           li.dropdown
             a href="#"
-              | Blog
+              = t('forum')
               i.fa.fa-angle-down
             ul.sub-menu role="menu"
               li
-                = link_to 'Blog', posts_url
+                = link_to t('forum'), posts_url
               li
-                = link_to 'New Post', new_post_url
+                = link_to t('new_post'), new_post_url
           li.dropdown
             a href="#"
               = t('info')
               i.fa.fa-angle-down
             ul.sub-menu role="menu"
+              li = link_to t('contacts'), contact_url
               li = link_to t('about'), about_url
           li.dropdown
             a href="#"
