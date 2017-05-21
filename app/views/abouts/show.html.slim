@@ -4,20 +4,16 @@ section#page-breadcrumb
       .row
         .action
           .col-sm-12
-            h1.title
-              | About Us
-            p
-              | Why our Clients love to work with us.
+            h1.title About Us
+            p Why our Clients love to work with us.
 section#company-information.padding.wow.fadeIn[data-wow-duration="1000ms" data-wow-delay="300ms"]
   .container
     .row
       .col-sm-6
-        = image_tag 'template/1.png', class: 'img-responsive'
+        = image_tag  @resource.image.file_url, class: 'img-responsive'
       .col-sm-6.padding-top
-        p
-          | Shoulder bresaola sausage consequat ground round duis excepteur exercitation landjaeger sunt. Duis officia sed frankfurter dolore pastrami tenderloin.
-        p
-          | When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.
+        p = @resource.description
+/ TODO: add services when it will be done
 section#services
   .container
     .row
@@ -25,40 +21,31 @@ section#services
         .single-service
           .wow.scaleIn[data-wow-duration="500ms" data-wow-delay="300ms"]
             = image_tag 'template/p3.jpg'
-          h2
-            | Incredibly Responsive
-          p
-            | Ground round tenderloin flank shank ribeye. Hamkevin meatball swine. Cow shankle beef sirloin chicken ground round.
+          h2 Incredibly Responsive
+          p Ground round tenderloin flank shank ribeye. Hamkevin meatball swine. Cow shankle beef sirloin chicken ground round.
       .col-sm-4.text-center.padding.wow.fadeIn[data-wow-duration="1000ms" data-wow-delay="600ms"]
         .single-service
           .wow.scaleIn[data-wow-duration="500ms" data-wow-delay="600ms"]
             = image_tag 'template/p3.jpg'
-          h2
-            | Superior Typography
-          p
-            | Hamburger ribeye drumstick turkey, strip steak sausage ground round shank pastrami beef brisket pancetta venison.
+          h2  Superior Typography
+          p Hamburger ribeye drumstick turkey, strip steak sausage ground round shank pastrami beef brisket pancetta venison.
       .col-sm-4.text-center.padding.wow.fadeIn[data-wow-duration="1000ms" data-wow-delay="900ms"]
         .single-service
           .wow.scaleIn[data-wow-duration="500ms" data-wow-delay="900ms"]
             = image_tag 'template/p3.jpg'
-          h2
-            | Swift Page Builder
-          p
-            | Venison tongue, salami corned beef ball tip meatloaf bacon. Fatback pork belly bresaola tenderloin bone pork kevin shankle.
+          h2 Swift Page Builder
+          p Venison tongue, salami corned beef ball tip meatloaf bacon. Fatback pork belly bresaola tenderloin bone pork kevin shankle.
 section#action.responsive
   .vertical-center
     .container
       .row
         .action.take-tour
           .col-sm-7.wow.fadeInLeft[data-wow-duration="500ms" data-wow-delay="300ms"]
-            h1.title
-              | Triangle Corporate Template
-            p
-              | A responsive, retina-ready & wide multipurpose template.
+            h1.title Triangle Corporate Template
+            p A responsive, retina-ready & wide multipurpose template.
           .col-sm-5.text-center.wow.fadeInRight[data-wow-duration="500ms" data-wow-delay="300ms"]
             .tour-button
-              a.btn.btn-common[href="#"]
-                | TAKE THE TOUR
+              a.btn.btn-common[href="#"] TAKE THE TOUR
 section#team
   .container
     .row
@@ -74,175 +61,23 @@ section#team
           li[data-target="#team-carousel" data-slide-to="1"]
         .carousel-inner
           .item.active
-            .col-sm-3.col-xs-6
-              .team-single-wrapper
-                .team-single
-                  .person-thumb
-                    = image_tag 'template/2.jpg', class: 'img-responsive'
-                  .social-profile
-                    ul.nav.nav-pills
-                      li
-                        a[href="#"]
-                          i.fa.fa-facebook
-                      li
-                        a[href="#"]
-                          i.fa.fa-twitter
-                      li
-                        a[href="#"]
-                          i.fa.fa-google-plus
-                .person-info
-                  h2
-                    | John Doe
-                  p
-                    | CEO & Developer
-            .col-sm-3.col-xs-6
-              .team-single-wrapper
-                .team-single
-                  .person-thumb
-                    = image_tag 'template/2.jpg', class: 'img-responsive'
-                  .social-profile
-                    ul.nav.nav-pills
-                      li
-                        a[href="#"]
-                          i.fa.fa-facebook
-                      li
-                        a[href="#"]
-                          i.fa.fa-twitter
-                      li
-                        a[href="#"]
-                          i.fa.fa-google-plus
-                .person-info
-                  h2
-                    | John Doe
-                  p
-                    | CEO & Developer
-            .col-sm-3.col-xs-6
-              .team-single-wrapper
-                .team-single
-                  .person-thumb
-                    = image_tag 'template/2.jpg', class: 'img-responsive'
-                  .social-profile
-                    ul.nav.nav-pills
-                      li
-                        a[href="#"]
-                          i.fa.fa-facebook
-                      li
-                        a[href="#"]
-                          i.fa.fa-twitter
-                      li
-                        a[href="#"]
-                          i.fa.fa-google-plus
-                .person-info
-                  h2
-                    | John Doe
-                  p
-                    | CEO & Developer
-            .col-sm-3.col-xs-6
-              .team-single-wrapper
-                .team-single
-                  .person-thumb
-                    = image_tag 'template/2.jpg', class: 'img-responsive'
-                  .social-profile
-                    ul.nav.nav-pills
-                      li
-                        a[href="#"]
-                          i.fa.fa-facebook
-                      li
-                        a[href="#"]
-                          i.fa.fa-twitter
-                      li
-                        a[href="#"]
-                          i.fa.fa-google-plus
-                .person-info
-                  h2
-                    | John Doe
-                  p
-                    | CEO & Developer
-          .item
-            .col-sm-3.col-xs-6
-              .team-single-wrapper
-                .team-single
-                  .person-thumb
-                    = image_tag 'template/2.jpg', class: 'img-responsive'
-                  .social-profile
-                    ul.nav.nav-pills
-                      li
-                        a[href="#"]
-                          i.fa.fa-facebook
-                      li
-                        a[href="#"]
-                          i.fa.fa-twitter
-                      li
-                        a[href="#"]
-                          i.fa.fa-google-plus
-                .person-info
-                  h2
-                    | John Doe
-                  p
-                    | CEO & Developer
-            .col-sm-3.col-xs-6
-              .team-single-wrapper
-                .team-single
-                  .person-thumb
-                    = image_tag 'template/2.jpg', class: 'img-responsive'
-                  .social-profile
-                    ul.nav.nav-pills
-                      li
-                        a[href="#"]
-                          i.fa.fa-facebook
-                      li
-                        a[href="#"]
-                          i.fa.fa-twitter
-                      li
-                        a[href="#"]
-                          i.fa.fa-google-plus
-                .person-info
-                  h2
-                    | John Doe
-                  p
-                    | CEO & Developer
-            .col-sm-3.col-xs-6
-              .team-single-wrapper
-                .team-single
-                  .person-thumb
-                    = image_tag 'template/2.jpg', class: 'img-responsive'
-                  .social-profile
-                    ul.nav.nav-pills
-                      li
-                        a[href="#"]
-                          i.fa.fa-facebook
-                      li
-                        a[href="#"]
-                          i.fa.fa-twitter
-                      li
-                        a[href="#"]
-                          i.fa.fa-google-plus
-                .person-info
-                  h2
-                    | John Doe
-                  p
-                    | CEO & Developer
-            .col-sm-3.col-xs-6
-              .team-single-wrapper
-                .team-single
-                  .person-thumb
-                    = image_tag 'template/2.jpg', class: 'img-responsive'
-                  .social-profile
-                    ul.nav.nav-pills
-                      li
-                        a[href="#"]
-                          i.fa.fa-facebook
-                      li
-                        a[href="#"]
-                          i.fa.fa-twitter
-                      li
-                        a[href="#"]
-                          i.fa.fa-google-plus
-                .person-info
-                  h2
-                    | John Doe
-                  p
-                    | CEO & Developer
+            - @resource.members.each do |member|
+              .col-sm-3.col-xs-6
+                .team-single-wrapper
+                  .team-single
+                    .person-thumb
+                      - if member.image.present?
+                        = image_tag member.image.file_url, class: 'img-responsive'
+                    .social-profile
+                      ul.nav.nav-pills
+                        - if member.social_links.present?
+                          - member.social_links.each do |key, value|
+                            li
+                              = link_to value
+                                i class="fa fa-#{key}"
+                  .person-info
+                    h2 = member.full_name
+                    p = member.position
         a.left.team-carousel-control.hidden-xs[href="#team-carousel" data-slide="prev"]
           | left
         a.right.team-carousel-control.hidden-xs[href="#team-carousel" data-slide="next"]
