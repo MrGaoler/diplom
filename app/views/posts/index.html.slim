@@ -16,7 +16,7 @@ section#blog.padding-top
       .col-md-3.col-sm-5
         .sidebar.blog-sidebar
           .sidebar-item.recent
-            h3 Comments
+            h3 = t('comments')
             / TODO: comments must be added too
             .media
               .pull-left
@@ -49,7 +49,7 @@ section#blog.padding-top
                 p
                   | posted on 07 March 2014
           .sidebar-item.categories
-            h3 Categories
+            h3 = t('categories')
             / TODO: implement categories
             ul.nav.navbar-stacked
               li
@@ -57,7 +57,7 @@ section#blog.padding-top
                   | Lorem ipsum
                   span.pull-right
                     | count
-              li.active
+              li
                 a[href="#"]
                   | Dolor sit amet
                   span.pull-right
