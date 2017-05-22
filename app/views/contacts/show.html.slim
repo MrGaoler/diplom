@@ -14,7 +14,7 @@ section#map-section
       h2 Contacts
       address
         |  E-mail:
-        a[href="mailto:contacts_pages.email"]
+        =link_to("mailto:#{@resource.email}")
           = @resource.email
         br
           | Phone:
