@@ -1,11 +1,10 @@
 function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 8,
-    center: {lat: -34.397, lng: 150.644}
-  });
+  var map = new google.maps.Map(document.getElementById('map'), {zoom: 8});
   var geocoder = new google.maps.Geocoder();
 
-  document.getElementById('submit').addEventListener('click', function() {
+  geocodeAddress(geocoder, map);
+
+  document.getElementById('submit-geocode').addEventListener('click', function() {
     geocodeAddress(geocoder, map);
   });
 }
@@ -20,7 +19,7 @@ function geocodeAddress(geocoder, resultsMap) {
         position: results[0].geometry.location
       });
     } else {
-      alert('Geocode was not successful for the following reason: ' + status);
+      alert('По даному запиту нічого не знайдено');
     }
   });
 }
