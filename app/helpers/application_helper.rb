@@ -1,5 +1,14 @@
 module ApplicationHelper
   def footer?
-    %w[abouts posts card contacts teams].include?(controller_name)
+    %w[
+      home
+      registrations
+      confirmations
+      mailer
+      passwords
+      sessions
+      shared
+      unlocks
+    ].exclude?(controller_name)
   end
 end
