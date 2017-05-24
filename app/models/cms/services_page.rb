@@ -10,7 +10,7 @@
 #
 
 class Cms::ServicesPage < Cms::StaticPage
-  has_fields %i[title description]
+  add_fields %i[title description]
   has_one :image, as: :imageable, dependent: :destroy
   accepts_nested_attributes_for :image
 
