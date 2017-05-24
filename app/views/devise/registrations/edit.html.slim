@@ -9,6 +9,9 @@
         .field
           = f.label :email, t('email')
           = f.email_field :email, autofocus: true, class: 'form-control'
+          .field
+            = f.label :username, t('username')
+            = f.text_field :username, class: 'form-control'
         .field
           = f.label :lname, t('last_name')
           = f.text_field :lname, class: 'form-control'
