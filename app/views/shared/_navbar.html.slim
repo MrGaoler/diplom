@@ -28,29 +28,8 @@ header#header
           = image_tag 'logo_with_text.png', class: 'logo'
       .collapse.navbar-collapse
         ul.nav.navbar-nav.navbar-right
-          li.active = link_to 'Home', root_url
-          li.dropdown
-            a href="#"
-              | Pages
-              i.fa.fa-angle-down
-            ul.sub-menu role="menu"
-              li
-                a href="#"  About
-              li
-                a href="#"  About 2
-              li
-                a href="#"  Services
-              li
-                a href="#"  Pricing
-              li
-                a href="#"  Contact us
-              li
-                a href="#"  Contact us 2
-              li
-                a href="#"  404 error
-              li
-                a href="#"  Coming Soon
-          li.dropdown
+          li.active = link_to t('home'), root_url
+          li.active.dropdown
             a href="#"
               = t('forum')
               i.fa.fa-angle-down
