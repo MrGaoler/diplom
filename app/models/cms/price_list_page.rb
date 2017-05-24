@@ -10,7 +10,7 @@
 #
 
 class Cms::PriceListPage < Cms::StaticPage
-  add_field :description
+  add_fields %i[description title]
   has_one :image, as: :imageable, dependent: :destroy
   accepts_nested_attributes_for :image
 end
