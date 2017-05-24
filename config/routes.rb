@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   scope '/forum' do
     resources :posts
   end
+
+  get '*unmatched_route', to: 'application#render_404'
 end
