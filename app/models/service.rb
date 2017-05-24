@@ -17,4 +17,6 @@ class Service < ApplicationRecord
   belongs_to :serviceable, polymorphic: true
   has_one :image, as: :imageable, dependent: :destroy
   accepts_nested_attributes_for :image
+
+  validates_presence_of :image, :name, :level, :duration, :description
 end

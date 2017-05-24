@@ -33,32 +33,15 @@ section#recent-projects.recent-projects
                 ul.nav.nav-pills
                   i.fa.fa-eye
             .portfolio-info
-              p = services.name
-              p = services.level
-              p = services.duration
-              p = services.description
-
-
-/section#recent-projects.recent-projects
-  .container
-    .row
-      h1.title.text-center.wow.fadeInDown[data-wow-duration="500ms" data-wow-delay="300ms"]
-        | Recent Projects
-      p.text-center.padding-bottom.wow.fadeInDown[data-wow-duration="400ms" data-wow-delay="400ms"]
-        | Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        br
-        |  Ut enim ad minim veniam, quis nostrud
-      .col-sm-3.col-xs-6.wow.fadeIn[data-wow-duration="1000ms" data-wow-delay="300ms"]
-        .portfolio-wrapper
-          .portfolio-single
-            .portfolio-thumb
-              img.img-responsive[src="images/portfolio/1.jpg" alt=""]
-            .portfolio-view
-              ul.nav.nav-pills
-                li
-                  a[href="images/portfolio/1.jpg" data-lightbox="example-set"]
-                    i.fa.fa-eye
-          .portfolio-info
-            h2
-              | Sailing Vivamus
-
+              p
+                strong = t('name')
+                = services.name
+              p
+                strong = t('level')
+                = services.level
+              p
+                strong = t('duration')
+                = services.duration
+              p
+                strong = t('description')
+                = services.description
