@@ -25,8 +25,6 @@ class User < ApplicationRecord
   ROLES = %i[banned user moderator admin].freeze
 
   has_many :posts
-  has_one :image, as: :imageable
-  accepts_nested_attributes_for :image
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
