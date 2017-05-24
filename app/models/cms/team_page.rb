@@ -10,5 +10,5 @@
 #
 
 class Cms::TeamPage < Cms::StaticPage
-  has_field :description
+  add_field :description
 end

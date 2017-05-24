@@ -5,13 +5,13 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   scope '/' do
-    resources :services
     resources :cards
 
     resource :home, only: :show
     resource :about, only: :show
     resource :team, only: :show
     resource :contact, only: :show
+    resource :services, only: :show
   end
 
   scope '/forum' do

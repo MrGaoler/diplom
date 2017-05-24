@@ -18,13 +18,13 @@ class Cms::StaticPage < ActiveRecord::Base
       first || create!
     end
 
-    def has_fields(fields = [])
+    def add_fields(fields = [])
       fields.each do |field|
-        has_field(field)
+        add_field(field)
       end
     end
 
-    def has_field(field_name, options = {})
+    def add_field(field_name, options = {})
       @fields ||= {}
       @fields[field_name] = options
 

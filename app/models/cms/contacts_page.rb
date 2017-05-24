@@ -10,5 +10,5 @@
 #
 
 class Cms::ContactsPage < Cms::StaticPage
-  has_fields %i[phone email location work_time]
+  add_fields %i[phone email location work_time]
 end

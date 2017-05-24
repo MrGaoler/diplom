@@ -1,18 +1,47 @@
-p#notice = notice
-
-p
-  strong = t('name')
-  = @service.name
-p
-  strong = t('level')
-  = @service.level
-p
-  strong = t('duration')
-  = @service.duration
-p
-  strong = t('description')
-  = @service.description
-
-= link_to t('edit'), edit_service_path(@service)
-'  |
-= link_to t('back'), services_path
+section#page-breadcrumb
+  .vertical-center.sun
+    .container
+      .row
+        .action
+          .col-sm-12
+            h1.title
+              = t('services')
+section#company-information.choose
+  .container
+    .row
+      .col-sm-6
+        = image_tag @resource.image.file_url, class: 'img-responsive'
+      .col-sm-6.padding-top
+        h2 = @resource.title
+        p = @resource.description
+section#recent-projects.recent-projects
+  .container
+    .row
+      h1.title.text-center.wow.fadeInDown[data-wow-duration="500ms" data-wow-delay="300ms"]
+        | Recent Projects
+      p.text-center.padding-bottom.wow.fadeInDown[data-wow-duration="400ms" data-wow-delay="400ms"]
+        | Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        br
+        |  Ut enim ad minim veniam, quis nostrud
+      - @resource.services.each do |services|
+        .col-sm-3.col-xs-6.wow.fadeIn[data-wow-duration="1000ms" data-wow-delay="300ms"]
+          .portfolio-wrapper
+            .portfolio-single
+              .portfolio-thumb
+                = image_tag services.image.file_url, class: 'img-responsive'
+              .portfolio-view
+                ul.nav.nav-pills
+                  i.fa.fa-eye
+            .portfolio-info
+              p
+                strong = t('name')
+                = services.name
+              p
+                strong = t('level')
+                = services.level
+              p
+                strong = t('duration')
+                = services.duration
+              p
+                strong = t('description')
+                = services.description
