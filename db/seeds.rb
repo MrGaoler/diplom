@@ -29,4 +29,3 @@ User::ROLES.each do |role_name|
   )
   print '.'
 end
-ap'done', color: { string: :greenish }
