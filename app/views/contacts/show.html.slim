@@ -7,18 +7,17 @@ section#page-breadcrumb
             h1.title = t('contact_us')
 section#map-section
   .container
-    / TODO: Add google map integration(Pls no yandex here)
-    #gmap
+    #gmap == render 'contacts/gmap', location: @resource.location
     .contact-info
       h2 = t('contacts')
       address
         = t('email')
-        a[href="mailto:contacts_pages.email"]
+        =link_to("mailto:#{@resource.email}")
           = @resource.email
         br
           = t('phone')
           = @resource.phone
-      h2 =t ('address')
+      h2 = t ('address')
       address = @resource.location
       h2 = t('work_time')
       address = @resource.work_time
