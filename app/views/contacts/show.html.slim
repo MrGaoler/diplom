@@ -4,21 +4,20 @@ section#page-breadcrumb
       .row
         .action
           .col-sm-12
-            h1.title  Contact US
-            p  Stay close
+            h1.title = t('contact_us')
 section#map-section
   .container
     #gmap == render 'contacts/gmap', location: @resource.location
     .contact-info
-      h2 Contacts
+      h2 = t('contacts')
       address
-        |  E-mail:
+        = t('email')
         =link_to("mailto:#{@resource.email}")
           = @resource.email
         br
-          | Phone:
+          = t('phone')
           = @resource.phone
-      h2 Address
+      h2 = t ('address')
       address = @resource.location
-      h2 Work Time
+      h2 = t('work_time')
       address = @resource.work_time

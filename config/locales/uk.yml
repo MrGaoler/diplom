@@ -75,6 +75,13 @@ uk:
   address: 'Адреса'
   send_a_message: 'Відправити повідомлення'
   submit: 'Підтвердити'
+  contact_us: 'Наші контактні дані:'
+  contacts: 'Контакти'
+  phone: 'Телефон'
+  address: 'Адреса'
+  work_time: 'Робочий час'
+  comments: 'Останні комментарі'
+  categories: 'Категорії'
   activerecord:
     errors:
       messages:
