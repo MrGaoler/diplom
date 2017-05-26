@@ -16,7 +16,7 @@ section#company-information.choose
           .portfolio-view
             ul.nav.nav-pills
               li
-                a data-lightbox="example-set" href=@resource.image.file_url
+                = link_to @resource.image.file_url, 'data-toggle': 'lightbox'
                   i.fa.fa-eye
       .col-sm-6.padding-top
         h2 = @resource.title
