@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     resource :team, only: :show
     resource :contact, only: :show
     resource :services, only: :show
+    resource :schedule, only: :show
+    resource :price_list, only: :show
   end
 
   scope '/forum' do

@@ -1,0 +1,17 @@
+section#page-breadcrumb
+  .vertical-center.sun
+    .container
+      .row
+        .action
+          .col-sm-12
+            h1.title
+              = t('schedule')
+section#company-information.choose
+  .container
+    .row
+      .col-sm-6
+        = image_tag @resource.image.file_url, class: 'img-responsive'
+      .col-sm-6.padding-top
+        h2 = @resource.title
+        p = @resource.description
+br

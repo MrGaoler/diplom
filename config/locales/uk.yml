@@ -83,6 +83,8 @@ uk:
   work_time: 'Робочий час'
   comments: 'Останні комментарі'
   categories: 'Категорії'
+  schedules: 'Розклад'
+  price_lists: 'Прайс-ліст'
   activerecord:
     errors:
       messages:

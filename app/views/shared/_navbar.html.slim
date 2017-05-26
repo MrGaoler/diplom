@@ -46,6 +46,8 @@ header#header
               li = link_to t('contacts'), contact_url
               li = link_to t('about'), about_url
               li = link_to t('services'), services_url
+              li = link_to t('schedules'), schedule_url
+              li = link_to t('price_lists'), price_list_url
           li.dropdown
             a href="#"
               = user_signed_in? ? current_user.display_name : t('log_in')
