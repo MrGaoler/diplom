@@ -13,39 +13,16 @@ section#company-information.padding.wow.fadeIn[data-wow-duration="1000ms" data-w
         = image_tag  @resource.image.file_url, class: 'img-responsive'
       .col-sm-6.padding-top
         p = @resource.description
-/ TODO: add services when it will be done
 section#services
   .container
     .row
-      .col-sm-4.text-center.padding.wow.fadeIn[data-wow-duration="1000ms" data-wow-delay="300ms"]
-        .single-service
-          .wow.scaleIn[data-wow-duration="500ms" data-wow-delay="300ms"]
-            = image_tag 'template/p3.jpg'
-          h2 Incredibly Responsive
-          p Ground round tenderloin flank shank ribeye. Hamkevin meatball swine. Cow shankle beef sirloin chicken ground round.
-      .col-sm-4.text-center.padding.wow.fadeIn[data-wow-duration="1000ms" data-wow-delay="600ms"]
-        .single-service
-          .wow.scaleIn[data-wow-duration="500ms" data-wow-delay="600ms"]
-            = image_tag 'template/p3.jpg'
-          h2  Superior Typography
-          p Hamburger ribeye drumstick turkey, strip steak sausage ground round shank pastrami beef brisket pancetta venison.
-      .col-sm-4.text-center.padding.wow.fadeIn[data-wow-duration="1000ms" data-wow-delay="900ms"]
-        .single-service
-          .wow.scaleIn[data-wow-duration="500ms" data-wow-delay="900ms"]
-            = image_tag 'template/p3.jpg'
-          h2 Swift Page Builder
-          p Venison tongue, salami corned beef ball tip meatloaf bacon. Fatback pork belly bresaola tenderloin bone pork kevin shankle.
-section#action.responsive
-  .vertical-center
-    .container
-      .row
-        .action.take-tour
-          .col-sm-7.wow.fadeInLeft[data-wow-duration="500ms" data-wow-delay="300ms"]
-            h1.title Triangle Corporate Template
-            p A responsive, retina-ready & wide multipurpose template.
-          .col-sm-5.text-center.wow.fadeInRight[data-wow-duration="500ms" data-wow-delay="300ms"]
-            .tour-button
-              a.btn.btn-common[href="#"] TAKE THE TOUR
+      - @resource.services.each do |service|
+        .col-sm-4.text-center.padding.wow.fadeIn[data-wow-duration="1000ms" data-wow-delay="300ms"]
+          .single-service
+            .wow.scaleIn[data-wow-duration="500ms" data-wow-delay="300ms"]
+              = image_tag service.image.file_url
+            h2 = service.name
+            p = service.description
 section#team
   .container
     .row

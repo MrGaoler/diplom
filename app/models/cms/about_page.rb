@@ -16,4 +16,7 @@ class Cms::AboutPage < Cms::StaticPage
 
   has_many :members, as: :memberable
   accepts_nested_attributes_for :members
+
+  has_many :services, as: :serviceable
+  accepts_nested_attributes_for :services
 end
