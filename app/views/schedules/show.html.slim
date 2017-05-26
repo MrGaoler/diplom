@@ -10,7 +10,14 @@ section#company-information.choose
   .container
     .row
       .col-sm-6
-        = image_tag @resource.image.file_url, class: 'img-responsive'
+        .portfolio-single
+          .portfolio-thumb
+            = image_tag @resource.image.file_url, class: 'img-responsive'
+          .portfolio-view
+            ul.nav.nav-pills
+              li
+                a data-lightbox="example-set" href=@resource.image.file_url
+                  i.fa.fa-eye
       .col-sm-6.padding-top
         h2 = @resource.title
         p = @resource.description
