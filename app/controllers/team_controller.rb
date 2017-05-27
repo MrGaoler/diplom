@@ -1,6 +1,6 @@
-class AboutsController < ApplicationController
+class TeamController < ApplicationController
   def show
-    @resource = Cms::AboutPage.load
+    @resource = Cms::TeamPage.load
     @resource.build_image unless @resource.image
 
     @members = Member.all

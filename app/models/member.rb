@@ -17,4 +17,12 @@ class Member < ApplicationRecord
 
   has_one :image, as: :imageable, dependent: :destroy
   accepts_nested_attributes_for :image
+
+  before_save :set_image
+
+  private
+
+  def set_image
+    build_image unless image.present?
+  end
 end

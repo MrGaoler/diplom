@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
     resource :home, only: :show
     resource :about, only: :show
-    resource :team, only: :show
+    get '/team', to: 'team#show' # resource :team, only: :show
     resource :contact, only: :show
     resource :services, only: :show
     resource :schedule, only: :show
