@@ -1,3 +1,6 @@
 class TeamsController < ApplicationController
-  def show; end
+  def show
+    @resource = Cms::TeamPage.load
+    @resource.build_image unless @resource.image
+  end
 end
