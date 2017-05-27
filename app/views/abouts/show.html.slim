@@ -38,13 +38,12 @@ section#team
           li[data-target="#team-carousel" data-slide-to="1"]
         .carousel-inner
           .item.active
-            - @resource.members.each do |member|
+            - @members.each do |member|
               .col-sm-3.col-xs-6
                 .team-single-wrapper
                   .team-single
                     .person-thumb
-                      - if member.image.present?
-                        = image_tag member.image.file_url, class: 'img-responsive'
+                      = image_tag member.image.file_url, class: 'img-responsive'
                     .social-profile
                       ul.nav.nav-pills
                         - if member.social_links.present?

@@ -14,7 +14,11 @@
 #
 
 class Service < ApplicationRecord
-  belongs_to :serviceable, polymorphic: true
+  belongs_to :serviceable, polymorphic: true # TODO: Check comment below
+  # I think this relation is useless also.
+  # When we create new service it should be available anywhere and
+  # there is no individual services for different pages(you can use example from members)
+
   has_one :image, as: :imageable, dependent: :destroy
   accepts_nested_attributes_for :image
 

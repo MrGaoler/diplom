@@ -1,0 +1,21 @@
+section#page-breadcrumb
+  .vertical-center.sun
+    .container
+      .row
+        .action
+          .col-sm-12
+            h1.title Наша команда
+            p = @resource.description
+section#portfolio
+  .container
+    .row
+      .portfolio-items
+        - @members.each do |member|
+          .col-xs-6.col-sm-4.col-md-3.portfolio-item.branded.logos
+            .portfolio-wrapper
+              .portfolio-single
+                .portfolio-thumb
+                  = image_tag member.image.file_url, class: 'img-responsive'
+              .portfolio-info
+                h2 = member.full_name
+                p = member.position

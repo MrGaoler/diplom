@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170521201846) do
+ActiveRecord::Schema.define(version: 20170527220344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,11 +44,8 @@ ActiveRecord::Schema.define(version: 20170521201846) do
     t.string   "position"
     t.string   "full_name"
     t.json     "social_links"
-    t.string   "memberable_type"
-    t.integer  "memberable_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.index ["memberable_type", "memberable_id"], name: "index_members_on_memberable_type_and_memberable_id", using: :btree
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "posts", force: :cascade do |t|
