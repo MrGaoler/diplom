@@ -40,8 +40,6 @@ end
   )
 end
 
-Cms::AboutPage.create!(
-  data: {
-    descriprion: Faker::Job.title
-  }
-)
+about_page = Cms::AboutPage.load
+about_page.description = Faker::Job.title
+about_page.save
