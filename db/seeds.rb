@@ -1,7 +1,8 @@
 User.destroy_all
 Post.destroy_all
 Member.destroy_all
-Cms::AboutPage.destroy_all
+Cms::StaticPage.destroy_all
+
 10.times do |i|
   user = User.create(
     fname: "first#{i}",
@@ -13,7 +14,7 @@ Cms::AboutPage.destroy_all
   user.posts.create(
     title: "Hello from #{user.id}",
     body: SecureRandom.hex,
-    created_at: Time.now,
+    created_at: Time.now
   ).build_image.save
 
   print '.'
@@ -32,14 +33,15 @@ User::ROLES.each do |role_name|
   print '.'
 end
 
-10.times do |i|
-  member = Member.create(
+10.times do
+  Member.create!(
     full_name: Faker::Name.name,
     position: Faker::Job.field
-  ).build_image.save
-end
-2.times do |i|
-  Cms::AboutPage.create(
-    description: Faker::Job.title
   )
 end
+
+Cms::AboutPage.create!(
+  data: {
+    descriprion: Faker::Job.title
+  }
+)
