@@ -1,5 +1,7 @@
 User.destroy_all
 Post.destroy_all
+Member.destroy_all
+Cms::AboutPage.destroy_all
 10.times do |i|
   user = User.create(
     fname: "first#{i}",
@@ -28,4 +30,16 @@ User::ROLES.each do |role_name|
     role: role_name
   )
   print '.'
+end
+
+10.times do |i|
+  member = Member.create(
+    full_name: Faker::Name.name,
+    position: Faker::Job.field
+  ).build_image.save
+end
+2.times do |i|
+  Cms::AboutPage.create(
+    description: Faker::Job.title
+  )
 end
