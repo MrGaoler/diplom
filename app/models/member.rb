@@ -2,14 +2,12 @@
 #
 # Table name: members
 #
-#  id              :integer          not null, primary key
-#  position        :string
-#  full_name       :string
-#  social_links    :json
-#  memberable_type :string
-#  memberable_id   :integer
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
+#  id           :integer          not null, primary key
+#  position     :string
+#  full_name    :string
+#  social_links :json
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
 #
 
 class Member < ApplicationRecord
