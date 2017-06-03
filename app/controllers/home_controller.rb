@@ -1,3 +1,8 @@
 class HomeController < ApplicationController
-  def show; end
+  def show
+    @resource = Cms::HomePage.load
+    @resource.build_image unless @resource.image
+
+    @members = Member.all
+  end
 end

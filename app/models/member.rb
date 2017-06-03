@@ -18,6 +18,8 @@ class Member < ApplicationRecord
   has_one :image, as: :imageable, dependent: :destroy
   accepts_nested_attributes_for :image
 
+  # scope :last_six_with_image, (->() { where(imageable_type: 'Post') })
+
   before_save :set_image
 
   private

@@ -186,3 +186,112 @@ THE CAT
   right:6px;
   transform: rotate(90deg);
 }
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #c1c1c1;
+  line-height: 28px;
+}
+
+hr {
+  margin: 32px 0;
+}
+
+.img-box {
+  position: relative;
+  height: 600px;
+  background-image: url("https://img3.goodfon.ru/original/1680x1050/b/39/gym-fitness-workout-dumbbells.jpg");
+  background-size: cover;
+  background-position: top center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+.img-box h1 {
+  margin: 0;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -77.5px;
+}
+.img-box .scroll {
+  width: 2px;
+  height: 50px;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  -webkit-animation-name: example;
+  animation-name: example;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+  background-color: #fff;
+}
+
+@-webkit-keyframes example {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 50px;
+  }
+}
+
+@keyframes example {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 50px;
+  }
+}
+article {
+  text-align: center;
+  width: 60%;
+  margin: 200px auto;
+}
+article p {
+  margin-top: 32px;
+}
+
+.clothes {
+  padding: 0 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+figure {
+  margin: 16px 0;
+  width: 30%;
+  position: relative;
+  opacity: 0;
+  -webkit-transform: translateX(-20px);
+  transform: translateX(-20px);
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+figure.show {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
