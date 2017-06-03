@@ -16,7 +16,7 @@ class Cms::HomePage < Cms::StaticPage
   accepts_nested_attributes_for :image
 
   def members_with_image # public
-    Member.with_image
+    Member.with_image.last(6)
   end
 
 end
