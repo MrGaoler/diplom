@@ -18,5 +18,4 @@ class Cms::HomePage < Cms::StaticPage
   def members_with_image # public
     Member.with_image.last(6)
   end
-
 end
