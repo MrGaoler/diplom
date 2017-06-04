@@ -10,7 +10,7 @@ section#portfolio
   .container
     .row
       .portfolio-items
-        - @members.each do |member|
+        - @resource.all_members.each do |member|
           .col-xs-6.col-sm-4.col-md-3.portfolio-item.branded.logos
             .portfolio-wrapper
               .portfolio-single
