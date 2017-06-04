@@ -1,7 +1,6 @@
 module ApplicationHelper
   def footer?
     %w[
-      home
       registrations
       confirmations
       mailer

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170527220344) do
+ActiveRecord::Schema.define(version: 20170604095624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,11 +61,8 @@ ActiveRecord::Schema.define(version: 20170527220344) do
     t.string   "level"
     t.integer  "duration"
     t.text     "description"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.string   "serviceable_type"
-    t.integer  "serviceable_id"
-    t.index ["serviceable_type", "serviceable_id"], name: "index_services_on_serviceable_type_and_serviceable_id", using: :btree
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|

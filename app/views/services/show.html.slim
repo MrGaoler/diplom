@@ -19,7 +19,7 @@ section#recent-projects.recent-projects
     .row
       h1.title.text-center.wow.fadeInDown[data-wow-duration="500ms" data-wow-delay="300ms"]
         | Каталог послуг:
-      - @resource.services.each do |services|
+      - @resource.all_services.each do |services|
         .col-sm-3.col-xs-6.wow.fadeIn[data-wow-duration="1000ms" data-wow-delay="300ms"]
           .portfolio-wrapper
             .portfolio-single

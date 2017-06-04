@@ -21,8 +21,18 @@ times_count.times do
     body: SecureRandom.hex,
     created_at: Time.now
   ).build_image.save
+  Member.create(
+    full_name: Faker::Name.name,
+    position: Faker::Job.field
+  ).build_image.save
+
+  Service.create(
+    name: Faker::Name.name,
+    level: Faker::Demographic.race,
+    description: Faker::Demographic.race
+  ).build_image.save
 end
-puts "#{times_count} постів було створено"
+puts "#{times_count} постів, членів компанії та сервісів було створено"
 
 # create user with different roles
 User::ROLES.each do |role_name|
@@ -37,14 +47,6 @@ User::ROLES.each do |role_name|
 end
 puts 'Створено по юзеру з унікальною ролью'
 
-times_count.times do
-  Member.create(
-    full_name: Faker::Name.name,
-    position: Faker::Job.field
-  ).build_image.save
-end
-puts "#{times_count} членів компанії було створено"
-
 puts 'Створення статичних сторінок: '
 
 about_page = Cms::AboutPage.load
@@ -57,14 +59,7 @@ services_page.title = Faker::Job.title
 services_page.description = Faker::Job.title
 services_page.save
 
-times_count.times do
-  services_page.services.create(
-    name: Faker::Name.name,
-    level: Faker::Demographic.race,
-    description: Faker::Demographic.race
-  ).build_image.save
-end
-puts "2. services page з #{times_count} сервісами"
+puts '2. services page'
 
 contacts_page = Cms::ContactsPage.load
 contacts_page.phone = Faker::PhoneNumber.cell_phone
