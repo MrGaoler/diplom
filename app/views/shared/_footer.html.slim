@@ -32,26 +32,18 @@ footer#footer
         .contact-info.bottom
           h2
             = t('contacts')
-          address
-            |  E-mail:
-            a[href="#"]
-              | email@email.com
-            br
-            |  Phone: +1 (123) 456 7890
-            br
-            |  Fax: +1 (123) 456 7891
-            br
-          h2
-            = t('address')
-          address
-            |  Unit C2, St.Vincent's Trading Est.,
-            br
-            |  Feeder Road,
-            br
-            |  Bristol, BS2 0UY
-            br
-            |  United Kingdom
-            br
+          .contact-info
+            h2 = t('contacts')
+            address
+              = t('email')
+              = @resource.email
+              br
+                = t('phone')
+                = @resource.phone
+            h2 = t ('address')
+            address = @resource.location
+            h2 = t('work_time')
+            address = @resource.work_time
       .col-md-4.col-sm-12
         .contact-form.bottom
           h2
