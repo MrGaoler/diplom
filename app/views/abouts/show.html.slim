@@ -4,7 +4,7 @@ section#page-breadcrumb
       .row
         .action
           .col-sm-12
-            h1.title About Us
+            h1.title = t('about')
             p Why our Clients love to work with us.
 section#company-information.padding.wow.fadeIn[data-wow-duration="1000ms" data-wow-delay="300ms"]
   .container
@@ -16,7 +16,7 @@ section#company-information.padding.wow.fadeIn[data-wow-duration="1000ms" data-w
 section#services
   .container
     .row
-      - @resource.services.each do |service|
+      - @resource.all_services.each do |service|
         .col-sm-4.text-center.padding.wow.fadeIn[data-wow-duration="1000ms" data-wow-delay="300ms"]
           .single-service
             .wow.scaleIn[data-wow-duration="500ms" data-wow-delay="300ms"]
@@ -27,18 +27,15 @@ section#team
   .container
     .row
       h1.title.text-center.wow.fadeInDown[data-wow-duration="500ms" data-wow-delay="300ms"]
-        | Meet the Team
-      p.text-center.wow.fadeInDown[data-wow-duration="400ms" data-wow-delay="400ms"]
-        | Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        br
-        |  Ut enim ad minim veniam, quis nostrud
+        = t('team')
+
       #team-carousel.carousel.slide.wow.fadeIn[data-ride="carousel" data-wow-duration="400ms" data-wow-delay="400ms"]
         ol.carousel-indicators.visible-xs
           li.active[data-target="#team-carousel" data-slide-to="0"]
           li[data-target="#team-carousel" data-slide-to="1"]
         .carousel-inner
           .item.active
-            - @members.each do |member|
+            - @resource.all_members.each do |member|
               .col-sm-3.col-xs-6
                 .team-single-wrapper
                   .team-single

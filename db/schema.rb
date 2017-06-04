@@ -73,11 +73,8 @@ ActiveRecord::Schema.define(version: 20170602190515) do
     t.string   "level"
     t.integer  "duration"
     t.text     "description"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.string   "serviceable_type"
-    t.integer  "serviceable_id"
-    t.index ["serviceable_type", "serviceable_id"], name: "index_services_on_serviceable_type_and_serviceable_id", using: :btree
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|

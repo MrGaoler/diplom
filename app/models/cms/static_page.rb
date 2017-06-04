@@ -48,6 +48,16 @@ class Cms::StaticPage < ActiveRecord::Base
     end
   end
 
+  # start public
+  def all_members
+    Member.all
+  end
+
+  def all_services
+    Service.all
+  end
+  # end public
+
   protected
 
   def set_default_value

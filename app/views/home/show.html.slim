@@ -1,11 +1,14 @@
-h1.h1.text-center = t('home')
-.cat.animal
-  .head
-    span.nose
-    .ears
-    .stripes.stripes-right
-    .stripes.stripes-left
-    .tongue
-  .body
-    span.stripes
-  .tail
+/Header
+header.img-box
+  h1.title Main title
+  .scroll
+
+/Content
+section.content
+
+  article
+    p = @resource.description
+    hr
+.clothes
+  - @resource.members_with_image.each do |member|
+    figure = image_tag member.image.file.url

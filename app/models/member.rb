@@ -11,10 +11,10 @@
 #
 
 class Member < ApplicationRecord
-  belongs_to :memberable, polymorphic: true
-
   has_one :image, as: :imageable, dependent: :destroy
   accepts_nested_attributes_for :image
+
+  scope :with_image, (-> { joins(:image).where('images.file is not null') })
 
   before_save :set_image
 

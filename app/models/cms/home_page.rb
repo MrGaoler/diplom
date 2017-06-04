@@ -10,4 +10,13 @@
 #
 
 class Cms::HomePage < Cms::StaticPage
+  add_field :description
+
+  has_one :image, as: :imageable, dependent: :destroy
+  accepts_nested_attributes_for :image
+
+  def members_with_image # public
+    Member.with_image.last(6)
+  end
+
 end
