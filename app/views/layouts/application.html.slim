@@ -9,7 +9,7 @@ html
   body class="#{controller_name} #{action_name}"
     == render 'shared/navbar'
 
-    div class="modal fade mymodalfade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel"
+    .modal.fade.mymodalfade{ tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel" }
 
     .content
       - flash.each do |name, msg|
