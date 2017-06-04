@@ -19,7 +19,7 @@
         a[href="#"]
           | Posted by #{post.user.display_name}
       p = post.body
-      / TODO: Likes and comments are stubbed
+      / TODO: Likes are stubbed
       .post-bottom.overflow
         ul.nav.navbar-nav.post-nav
           li
@@ -27,6 +27,6 @@
               i.fa.fa-heart
               | 32 Love
           li
-            a[href="#"]
+            = link_to post_comments_path(post_id: post.id)
               i.fa.fa-comments
-              | 3 Comments
+              = "#{post.comments.count} Comments"

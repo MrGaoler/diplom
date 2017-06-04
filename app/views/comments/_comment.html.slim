@@ -1,0 +1,6 @@
+tr
+  td = comment.title
+  td = comment.body
+  td = link_to 'Show', post_comment_path(id: comment.id, post_id: params[:post_id])
+  td = link_to 'Edit', edit_post_comment_path(id: comment.id, post_id: params[:post_id])
+  td = link_to 'Destroy', post_comment_path(id: comment.id, post_id: params[:post_id]), data: { confirm: 'Are you sure?' }, method: :delete

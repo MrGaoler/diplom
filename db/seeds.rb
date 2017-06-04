@@ -69,3 +69,6 @@ contacts_page.work_time = Faker::Time.between(DateTime.now - 1, DateTime.now)
 contacts_page.save
 
 puts '3. contacts page'
+
+# auto annotate models
+`annotate`

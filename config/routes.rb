@@ -7,17 +7,19 @@ Rails.application.routes.draw do
   scope '/' do
     resources :cards
 
-    resource :home, only: :show
-    resource :about, only: :show
-    get '/team', to: 'team#show' # resource :team, only: :show
-    resource :contact, only: :show
-    resource :services, only: :show
-    resource :schedule, only: :show
-    resource :price_list, only: :show
+    get '/home', to: 'home#show'
+    get '/about', to: 'abouts#show'
+    get '/team', to: 'team#show'
+    get '/contact', to: 'contacts#show'
+    get '/services', to: 'services#show'
+    get '/schedule', to: 'schedules#show'
+    get '/price_list', to: 'price_lists#show'
   end
 
   scope '/forum' do
-    resources :posts
+    resources :posts do
+      resources :comments
+    end
   end
 
   get '*unmatched_route', to: 'application#render_404'

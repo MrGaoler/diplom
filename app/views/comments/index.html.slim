@@ -1,0 +1,17 @@
+h1.text-center Коментарі
+.col-xs-offset-3
+  table
+    thead
+      tr
+        th Title
+        th Body
+        th
+        th
+        th
+
+    tbody
+      == render @comments
+
+  br
+
+  = link_to 'New Comment', new_post_comment_path

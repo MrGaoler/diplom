@@ -14,5 +14,5 @@ class Image < ApplicationRecord
   belongs_to :imageable, polymorphic: true, optional: true
 
   mount_uploader :file, ImageUploader
-  scope :from_posts, (->() { where(imageable_type: 'Post') })
+  scope :from_posts, (->() { where("imageable_type = 'Post' AND file is not null") })
 end

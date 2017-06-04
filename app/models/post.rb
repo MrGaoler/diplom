@@ -18,8 +18,12 @@ class Post < ApplicationRecord
   has_one :image, as: :imageable, dependent: :destroy
   accepts_nested_attributes_for :image
 
-  has_many :comments, as: :commentable
+  has_many :comments
   accepts_nested_attributes_for :comments
 
   validates :title, :body, presence: true
+
+  def images_from_posts # public
+    Image.from_posts.last(6)
+  end
 end
