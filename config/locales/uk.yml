@@ -68,7 +68,7 @@ uk:
   listing_cards: 'Перелік карт'
   card_type: 'Тип карти'
   schedule: 'Графік'
-  image: 'Світлина'
+  image: 'Зображення'
   profile: 'Профіль'
   forum: 'Форум'
   last_photos: 'Останні фото'
@@ -85,6 +85,11 @@ uk:
   categories: 'Категорії'
   schedules: 'Розклад'
   price_lists: 'Прайс-ліст'
+  post_was_successfully_created: 'Повідомлення було успішно створено'
+  post_was_successfully_updated: 'Повідомлення було успішно оновлено'
+  post_was_successfully_destroyed: 'Повідомлення було успішно видалено'
+  leave_blank: 'залиште порожнім, якщо ви не хочете змінити його'
+  current_password_to_confirm_your_changes: 'нам потрібен поточний пароль, щоб підтвердити зміни'
   activerecord:
     errors:
       messages:

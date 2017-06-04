@@ -17,7 +17,6 @@ p
   = ": #{@post.body}"
 
 - if @post.image
-  .col-12 = image_tag @post.image.file_url, class: 'thumb'
-
+  .col-12 = image_tag @post.image.file.url, class: 'thumb'
 
 = link_to t('back'), posts_path
