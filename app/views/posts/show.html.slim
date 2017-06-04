@@ -11,10 +11,10 @@
 
 p
   strong = t('title')
-  = @post.title
+  = ": #{@post.title}"
 p
   strong = t('body')
-  = @post.body
+  = ": #{@post.body}"
 
 - if @post.image
   .col-12 = image_tag @post.image.file_url, class: 'thumb'

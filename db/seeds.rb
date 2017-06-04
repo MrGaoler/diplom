@@ -29,6 +29,7 @@ times_count.times do
   Service.create(
     name: Faker::Name.name,
     level: Faker::Demographic.race,
+    duration: Faker::Number.digit,
     description: Faker::Demographic.race
   ).build_image.save
 end
@@ -65,7 +66,7 @@ contacts_page = Cms::ContactsPage.load
 contacts_page.phone = Faker::PhoneNumber.cell_phone
 contacts_page.email = Faker::Internet.email
 contacts_page.location = Faker::Address.street_address
-contacts_page.work_time = Faker::Time.between(DateTime.now - 1, DateTime.now)
+contacts_page.work_time = '09:00 - 18:00'
 contacts_page.save
 
 puts '3. contacts page'

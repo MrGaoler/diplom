@@ -93,7 +93,6 @@ section#blog.padding-top
                   span.pull-right
                     | count
           .sidebar-item.popular
-            / TODO: add translation for 'Останні фото'
             h3 = t('last_photos')
             ul.gallery
               - Image.from_posts.last(6).each do |image|
