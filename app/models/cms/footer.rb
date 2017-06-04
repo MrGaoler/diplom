@@ -9,7 +9,6 @@
 #  updated_at :datetime         not null
 #
 
-class Cms::FooterPage < Cms::StaticPage
+class Cms::Footer < Cms::StaticPage
   add_fields %i[phone email location work_time]
-  @resource = Cms::FooterPage.load
 end

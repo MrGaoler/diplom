@@ -71,12 +71,12 @@ contacts_page.save
 
 puts '3. contacts page'
 
-footer_page = Cms::ContactsPage.load
-footer_page.phone = Faker::PhoneNumber.cell_phone
-footer_page.email = Faker::Internet.email
-footer_page.location = Faker::Address.street_address
-footer_page.work_time = Faker::Time.between(DateTime.now - 1, DateTime.now)
-footer_page.save
+footer = Cms::Footer.load
+footer.phone = Faker::PhoneNumber.cell_phone
+footer.email = Faker::Internet.email
+footer.location = Faker::Address.street_address
+footer.work_time = Faker::Time.between(DateTime.now - 1, DateTime.now)
+footer.save
 
 puts '4. footer page page'
 
