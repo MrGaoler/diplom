@@ -1,12 +1,10 @@
 .modal-dialog[role="document"]
   .modal-content
     .modal-header
-      button.close[type="button" data-dismiss="modal" aria-label="Close"]
-        span[aria-hidden="true"] ×
-      h4#gridSystemModalLabel.modal-title
+      h4#gridSystemModalLabel.modal-title.text-center
         = t('creating_a_new_post')
     .modal-body
-      = form_for(@post, html: { class: 'form-horizontal', id: 'post_form', role: 'form', remote: is_remote ||= false }) do |f|
+      = form_for(@post, html: { class: 'form-horizontal', id: 'post_form', role: 'form' }) do |f|
         .form-group
           = f.label :title, t('title'), class: 'col-sm-2 control-label'
           .col-sm-10

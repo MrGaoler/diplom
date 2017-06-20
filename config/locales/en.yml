@@ -69,3 +69,8 @@ en:
   categories: 'Categories'
   schedules: 'Schedule'
   price_lists: 'Price lists'
+  post_was_successfully_created: 'Post was successfully created'
+  post_was_successfully_updated: 'Post was successfully updated'
+  post_was_successfully_destroyed: 'Post was successfully destroyed'
+  leave_blank: "leave blank if you don't want to change it"
+  current_password_to_confirm_your_changes: 'we need your current password to confirm your changes'
