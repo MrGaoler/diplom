@@ -71,5 +71,14 @@ contacts_page.save
 
 puts '3. contacts page'
 
+footer = Cms::Footer.load
+footer.phone = Faker::PhoneNumber.cell_phone
+footer.email = Faker::Internet.email
+footer.location = Faker::Address.street_address
+footer.work_time = Faker::Time.between(DateTime.now - 1, DateTime.now)
+footer.save
+
+puts '4. footer page page'
+
 # auto annotate models
 `annotate`

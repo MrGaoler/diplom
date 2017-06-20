@@ -1,12 +1,11 @@
+ruby:
+  footer = Cms::Footer.load
 footer#footer
   .container
     .row
-      .col-sm-12.text-center.bottom-separator
-        = image_tag 'template/under.png', class: 'comments-image'
       .col-md-4.col-sm-6
         .testimonial.bottom
-          h2
-            | Testimonial
+          h2 Testimonial
           .media
             .pull-left
               a[href="#"]
@@ -28,48 +27,33 @@ footer#footer
                 a[href=""]
                   | - Abraham Josef
       .col-md-3.col-sm-6
-        /TODO: Change Testimonial, replace addresses
         .contact-info.bottom
           h2
             = t('contacts')
           address
-            |  E-mail:
+            = "#{t('email')}: "
             a[href="#"]
-              | email@email.com
+              = footer.email
             br
-            |  Phone: +1 (123) 456 7890
-            br
-            |  Fax: +1 (123) 456 7891
+            = "#{t('phone')}: #{footer.phone}"
             br
           h2
-            = t('address')
+            | Адреса
           address
-            |  Unit C2, St.Vincent's Trading Est.,
-            br
-            |  Feeder Road,
-            br
-            |  Bristol, BS2 0UY
-            br
-            |  United Kingdom
-            br
+            = footer.location
       .col-md-4.col-sm-12
         .contact-form.bottom
           h2
-            = t('send_a_message')
+            | Відправити повідомлення
           form#main-contact-form[name="contact-form" method="post"]
             .form-group
-              input.form-control[type="text" name="name" required="required" placeholder= t('first_name')]
+              input.form-control[type="text" name="name" required="" placeholder="Name"]
             .form-group
-              input.form-control[type="email" name="email" required="required" placeholder= t('email')]
+              input.form-control[type="email" name="email" required="" placeholder="Email Id"]
             .form-group
-              textarea#message.form-control[name="message" required="required" rows="8" placeholder= t('body')]
+              textarea#message.form-control[name="message" required="" rows="8" placeholder="Your text here"]
             .form-group
-              input.btn.btn-submit[type="submit" name="submit" value= t('submit')]
+              input.btn.btn-submit[type="submit" name="submit" value="Submit"]
       .col-sm-12
-        .copyright-text.text-center
-          p
-            | © Your Company 2014. All Rights Reserved.
-          p
-            | Designed by
-            a[target="_blank" href="#"]
-              | Themeum
+        .copyright-text.text-center{style="color: black" }
+          p © Step UP 2017. All Rights Reserved.
